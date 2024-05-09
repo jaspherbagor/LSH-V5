@@ -78,6 +78,8 @@
                 <select name="payment_method" class="form-control select2" id="paymentMethodChange" autocomplete="off">
                     <option value="">Select Payment Method</option>
                     <option value="Stripe">Cards</option>
+                    <option value="Gcash">Cards</option>
+                    <option value="Maya">Cards</option>
                 </select>
 
                 <div class="stripe mt_20">
@@ -111,6 +113,9 @@
                         >
                         </script>
                     </form>
+                </div>
+                <div class="mt_20">
+                    
                 </div>
 
             </div>

@@ -25,7 +25,8 @@
 	        $('.shipping-form').toggle();
 	    });
 
-		$('.paypal').hide();
+		$('.gcash').hide();
+		$('.maya').hide();
 	    $('.stripe').hide();
 	    $('.bank').hide();
 	    $('.cash-on-delivery').hide();
@@ -33,23 +34,37 @@
 
 		$('#paymentMethodChange').on('change',function() {
 
-		    if($('#paymentMethodChange').val() == 'PayPal')
+			if($('#paymentMethodChange').val() == 'Stripe')
 		    {
-		        $('.paypal').show();
-		        $('.stripe').hide();
-		        $('.bank').hide();
-		        $('.cash-on-delivery').hide();
-		    }
-		    else if($('#paymentMethodChange').val() == 'Stripe')
-		    {
-		        $('.paypal').hide();
+		        $('.gcash').hide();
+				$('.maya').hide();
 		        $('.stripe').show();
 		        $('.bank').hide();
 		        $('.cash-on-delivery').hide();
 		    }
+
+			else if($('#paymentMethodChange').val() == 'Gcash')
+			{
+				$('.maya').hide();
+				$('.gcash').show();
+				$('.stripe').hide();
+				$('.bank').hide();
+				$('.cash-on-delivery').hide();
+			}
+
+			else if($('#paymentMethodChange').val() == 'Maya')
+			{
+				$('.gcash').hide();
+				$('.maya').show();
+				$('.stripe').hide();
+				$('.bank').hide();
+				$('.cash-on-delivery').hide();
+			}
+
 		    else if($('#paymentMethodChange').val() == '')
 		    {
-		    	$('.paypal').hide();
+		    	$('.maya').hide();
+				$('.gcash').hide();
 		        $('.stripe').hide();
 		        $('.bank').hide();
 		        $('.cash-on-delivery').hide();
