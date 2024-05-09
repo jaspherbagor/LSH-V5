@@ -116,14 +116,19 @@
                 </div>
                 <div class="gcash mt_20">
                     <div class="container">
-                        <h4>Pay with Gcash <span><img src="{{ asset('uploads/gcash_logo.png') }}" alt="" class="w_100 payment-logo"></span></h4>
-                        <img src="{{ asset('') }}" alt="">
+                        <h4>Pay with Gcash</h4>
+                        <div class="text-center">
+                            <img src="{{ asset('uploads/gcash_logo.png') }}" alt="" class="w_100 payment-logo">
+                        </div>
+
                     </div>
                 </div>
                 <div class="maya mt_20">
                     <div class="container">
                         <h4>Pay with Maya</h4>
-                        <img src="{{ asset('') }}" alt="">
+                        <div class="text-center">
+                            <img src="{{ asset('uploads/maya_logo.png') }}" alt="" class="w_100 payment-logo">
+                        </div>
                     </div>
                 </div>
 

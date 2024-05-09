@@ -1387,3 +1387,7 @@ select {
 .home-rooms .inner .text .button a:hover, .blog-item .inner .text .button a:hover{
 	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
+
+.payment-logo {
+	height: 60px
+}
