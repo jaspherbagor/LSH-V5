@@ -50,6 +50,7 @@
 				$('.gcash').show();
 				$('.stripe').hide();
 				$('#transact_form').show();
+				$('#payment_method').value = 'Gcash';
 				$('.bank').hide();
 				$('.cash-on-delivery').hide();
 			}
@@ -60,6 +61,7 @@
 				$('.maya').show();
 				$('.stripe').hide();
 				$('#transact_form').show();
+				$('#payment_method').value = 'Maya';
 				$('.bank').hide();
 				$('.cash-on-delivery').hide();
 			}
@@ -76,6 +78,17 @@
 
 		});
 
+	});
+
+	$(document).ready(function() {
+		// Add event listener to the select element
+		$('#paymentMethodChange').on('change', function() {
+			// Get the selected option value
+			var selectedOption = $(this).val();
+			
+			// Update the value of the hidden input field
+			$('#paymentMethodInput').val(selectedOption);
+		});
 	});
 		
 	new WOW().init();
