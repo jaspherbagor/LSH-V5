@@ -77,9 +77,9 @@
                 <h4>Make Payment</h4>
                 <select name="payment_method" class="form-control select2" id="paymentMethodChange" autocomplete="off">
                     <option value="">Select Payment Method</option>
-                    <option value="Stripe">Cards</option>
-                    <option value="Gcash">Cards</option>
-                    <option value="Maya">Cards</option>
+                    <option value="Stripe">Stripe</option>
+                    <option value="Gcash">Gcash</option>
+                    <option value="Maya">Maya</option>
                 </select>
 
                 <div class="stripe mt_20">
@@ -114,8 +114,17 @@
                         </script>
                     </form>
                 </div>
-                <div class="mt_20">
-                    
+                <div class="gcash mt_20">
+                    <div class="container">
+                        <h4>Pay with Gcash <span><img src="{{ asset('uploads/gcash_logo.png') }}" alt="" class="w_100 payment-logo"></span></h4>
+                        <img src="{{ asset('') }}" alt="">
+                    </div>
+                </div>
+                <div class="maya mt_20">
+                    <div class="container">
+                        <h4>Pay with Maya</h4>
+                        <img src="{{ asset('') }}" alt="">
+                    </div>
                 </div>
 
             </div>
