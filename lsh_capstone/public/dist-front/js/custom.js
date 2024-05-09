@@ -40,6 +40,7 @@
 				$('.maya').hide();
 		        $('.stripe').show();
 		        $('.bank').hide();
+				$('#transact_form').hide();
 		        $('.cash-on-delivery').hide();
 		    }
 
@@ -48,6 +49,7 @@
 				$('.maya').hide();
 				$('.gcash').show();
 				$('.stripe').hide();
+				$('#transact_form').show();
 				$('.bank').hide();
 				$('.cash-on-delivery').hide();
 			}
@@ -57,6 +59,7 @@
 				$('.gcash').hide();
 				$('.maya').show();
 				$('.stripe').hide();
+				$('#transact_form').show();
 				$('.bank').hide();
 				$('.cash-on-delivery').hide();
 			}
@@ -67,6 +70,7 @@
 				$('.gcash').hide();
 		        $('.stripe').hide();
 		        $('.bank').hide();
+				$('#transact_form').hide();
 		        $('.cash-on-delivery').hide();
 		    }
 

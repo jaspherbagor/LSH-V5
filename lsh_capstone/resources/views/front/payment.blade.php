@@ -258,11 +258,12 @@
                     <div class="container" id="transact_form">
                         <form action="" method="">
                             <div class="mb-3">
-                              <label for="reference-number" class="form-label">Reference Number</label>
-                              <input type="text" class="form-control" name="reference_id">
+                              <label for="reference-number" class="form-label">Reference Number:</label>
+                              <input type="text" class="form-control" name="reference_id" placeholder="Input Reference No.">
+                              <input type="hidden" value="" id="method">
                             </div>
                             
-                            <button type="submit" class="btn btn-success">Transact</button>
+                            <button type="submit" class="btn btn-success bg-website text-dark fw-bold w-100">Transact</button>
                         </form>
                     </div>
                 </div>
