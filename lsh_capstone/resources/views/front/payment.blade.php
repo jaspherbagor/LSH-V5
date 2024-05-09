@@ -255,6 +255,16 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="container" id="transact_form">
+                        <form action="" method="">
+                            <div class="mb-3">
+                              <label for="reference-number" class="form-label">Reference Number</label>
+                              <input type="text" class="form-control" name="reference_id">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success">Transact</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
