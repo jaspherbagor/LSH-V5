@@ -120,6 +120,9 @@
                         <div class="text-center">
                             <img src="{{ asset('uploads/gcash_logo.png') }}" alt="" class="w_100 payment-logo">
                         </div>
+                        <div class="mt-3 text-center d-flex align-items-center justify-content-center container">
+                            <img src="{{ asset('uploads/gcash-qr.webp') }}" alt="">
+                        </div>
 
                     </div>
                 </div>
