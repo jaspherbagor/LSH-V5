@@ -92,6 +92,8 @@ Route::post('/payment/stripe/{price}', [BookingController::class, 'stripe'])->na
 
 Route::post('/payment/gcash/{price}', [BookingController::class, 'gcash'])->name('gcash');
 
+Route::post('/payment/maya/{price}', [BookingController::class, 'maya'])->name('maya');
+
 /* Guest Middleware */
 Route::middleware('guest')->group(function () {
     /* Customer Routes */

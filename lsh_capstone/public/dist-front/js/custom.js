@@ -17,6 +17,8 @@
 	});
 
 	$(document).ready(function() {
+		$('#transact_form_gcash').hide();
+		$('#transact_form_maya').hide();
 		$('.select2').select2({
 			theme: "bootstrap"
 		});
@@ -40,7 +42,8 @@
 				$('.maya').hide();
 		        $('.stripe').show();
 		        $('.bank').hide();
-				$('#transact_form').hide();
+				$('#transact_form_gcash').hide();
+				$('#transact_form_maya').hide();
 		        $('.cash-on-delivery').hide();
 		    }
 
@@ -49,8 +52,8 @@
 				$('.maya').hide();
 				$('.gcash').show();
 				$('.stripe').hide();
-				$('#transact_form').show();
-				$('#payment_method').value = 'Gcash';
+				$('#transact_form_gcash').show();
+				$('#transact_form_maya').hide();
 				$('.bank').hide();
 				$('.cash-on-delivery').hide();
 			}
@@ -60,8 +63,8 @@
 				$('.gcash').hide();
 				$('.maya').show();
 				$('.stripe').hide();
-				$('#transact_form').show();
-				$('#payment_method').value = 'Maya';
+				$('#transact_form_gcash').hide();
+				$('#transact_form_maya').show();
 				$('.bank').hide();
 				$('.cash-on-delivery').hide();
 			}
@@ -72,23 +75,13 @@
 				$('.gcash').hide();
 		        $('.stripe').hide();
 		        $('.bank').hide();
-				$('#transact_form').hide();
+				$('#transact_form_gcash').hide();
+				$('#transact_form_maya').hide();
 		        $('.cash-on-delivery').hide();
 		    }
 
 		});
 
-	});
-
-	$(document).ready(function() {
-		// Add event listener to the select element
-		$('#paymentMethodChange').on('change', function() {
-			// Get the selected option value
-			var selectedOption = $(this).val();
-			
-			// Update the value of the hidden input field
-			$('#paymentMethodInput').val(selectedOption);
-		});
 	});
 		
 	new WOW().init();

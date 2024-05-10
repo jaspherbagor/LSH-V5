@@ -255,20 +255,38 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="container" id="transact_form">
-                        <form action="{{ route('gcash', ['price' => $total_price] ) }}" method="post" id="paymentForm">
+                    <div class="container" id="transact_form_gcash">
+                        <form action="{{ route('gcash', ['price' => $total_price]) }}" method="post">
                             @csrf
                             <div class="mb-3">
-                              <label for="reference-number" class="form-label">Reference Number:</label>
+                              <label for="reference-number" class="form-label">Reference Number (Gcash):</label>
                               <input type="text" class="form-control" name="reference_id" placeholder="Input Reference No.">
                             </div>
                             <div class="mb-3">
-                                <input type="hidden" value="" id="paymentMethodInput">
+                                <input type="hidden" value="Gcash" id="paymentMethodInput">
                             </div>
                             
                             <button type="submit" class="btn btn-success bg-website text-dark fw-bold w-100">Transact</button>
                         </form>
                     </div>
+
+                    <div class="container" id="transact_form_maya">
+                        <form action="{{ route('gcash', ['price' => $total_price]) }}" method="post" id="paymentForm">
+                            @csrf
+                            <div class="mb-3">
+                              <label for="reference-number" class="form-label">Reference Number (Maya):</label>
+                              <input type="text" class="form-control" name="reference_id" placeholder="Input Reference No.">
+                            </div>
+                            <div class="mb-3">
+                                <input type="hidden" value="Maya" id="paymentMethodInput">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-success bg-website text-dark fw-bold w-100">Transact</button>
+                        </form>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>

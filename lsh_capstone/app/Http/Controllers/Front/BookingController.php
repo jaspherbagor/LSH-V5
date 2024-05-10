@@ -476,5 +476,10 @@ class BookingController extends Controller
         dd($final_price);
     }
 
+    public function maya(Request $request, $final_price)
+    {
+        dd($final_price);
+    }
+
 
 }
