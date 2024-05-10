@@ -109,7 +109,9 @@
 
     $('.slide-carousel').owlCarousel({
         loop: true,
-        autoplay: false,
+        autoplay: true,
+		autoplaySpeed: 1500,
+		smartSpeed: 1500,
         autoplayHoverPause: true,
         margin: 0,
         mouseDrag: false,
