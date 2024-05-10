@@ -90,7 +90,7 @@ Route::post('/payment', [BookingController::class, 'payment'])->name('payment');
 
 Route::post('/payment/stripe/{price}', [BookingController::class, 'stripe'])->name('stripe');
 
-
+Route::post('/payment/gcash/{price}', [BookingController::class, 'gcash'])->name('gcash');
 
 /* Guest Middleware */
 Route::middleware('guest')->group(function () {
