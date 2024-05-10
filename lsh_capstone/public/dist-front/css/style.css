@@ -912,8 +912,6 @@ select {
 	border: 2px solid #fff;
 }
 .photo-gallery .photo-caption {
-	margin-bottom: 30px;
-	margin-top: 10px;
 	color: #000;
 	font-weight: 400;
 }
