@@ -25,8 +25,8 @@
                 <a class="nav-link" href="{{ route('customer_profile') }}"><i class="fa fa-user"></i> <span>Edit Profile</span></a>
             </li>
 
-            <li><a class="nav-link" href="{{ route('home') }}" target="_blank">
-                <i class="fa fa-home" aria-hidden="true"></i> <span>Visit Website</span></a>
+            <li>
+                <a class="nav-link" href="{{ route('home') }}" target="_blank"><i class="fa fa-home" aria-hidden="true"></i> <span>Visit Website</span></a>
             </li>
             
         </ul>
