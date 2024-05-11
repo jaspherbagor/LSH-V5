@@ -1957,13 +1957,13 @@ body, html {
   min-height: 100%; }
 
 body {
-  /* background-color: #f4f6f9; */
+  background-color: #f4f6f9;
   /* background: url('https://i.pinimg.com/originals/20/07/d6/2007d6dd4ca8f4b527d19c7baaefab7e.jpg'); */
   /* background-color: #fc89ac;
 background-image: linear-gradient(315deg, #fc89ac 0%, #b86d29 74%); */
 /* background-color: #e0d2b4;
 background-image: linear-gradient(315deg, #e0d2b4 0%, #e2ac6b 74%); */
-  backdrop-filter: blur(1px);
+  /* backdrop-filter: blur(1px); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -3006,4 +3006,8 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
 .email-input, .password-input {
   border-radius: 10px !important;
   border: 2px solid rgb(8, 8, 8);
+}
+
+.payment-qr {
+  width: 200px
 }

@@ -473,7 +473,7 @@ class BookingController extends Controller
 
     public function gcash(Request $request, $final_price)
     {
-        dd($final_price);
+        dd($request->reference_id);
     }
 
     public function maya(Request $request, $final_price)
