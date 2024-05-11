@@ -269,26 +269,21 @@
                             <div class="mb-3">
                               <label for="reference-number" class="form-label">Reference Number (Gcash):</label>
                               <input type="text" class="form-control" name="reference_id" placeholder="Input Reference No.">
+                                @if($errors->has('reference_id'))
+                                    <span class="text-danger">{{ $errors->first('reference_id') }}</span>
+                                @endif
                             </div>
-                            <div class="mb-3">
-                                <input type="hidden" value="Gcash" id="paymentMethodInput">
-                            </div>
-                            
                             <button type="submit" class="btn btn-success bg-website text-dark fw-bold w-100">Transact</button>
                         </form>
                     </div>
 
                     <div class="container" id="transact_form_maya">
-                        <form action="{{ route('gcash', ['price' => $total_price]) }}" method="post" id="paymentForm">
+                        <form action="{{ route('gcash', ['price' => $total_price]) }}" method="post">
                             @csrf
                             <div class="mb-3">
                               <label for="reference-number" class="form-label">Reference Number (Maya):</label>
                               <input type="text" class="form-control" name="reference_id" placeholder="Input Reference No.">
                             </div>
-                            <div class="mb-3">
-                                <input type="hidden" value="Maya" id="paymentMethodInput">
-                            </div>
-                            
                             <button type="submit" class="btn btn-success bg-website text-dark fw-bold w-100">Transact</button>
                         </form>
                     </div>

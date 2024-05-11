@@ -471,12 +471,12 @@ class BookingController extends Controller
     }
 
 
-    public function gcash(Request $request, $final_price)
+    public function gcash(Request $request, $price)
     {
-        $request->validate([
-            'reference_id' => 'required'
-        ]);
-
+        // $request->validate([
+        //     'reference_id' => 'required', // Reference id must be provided
+        // ]);
+        
         // Generate an order number based on the current time
         $order_no = time();
 
@@ -491,7 +491,7 @@ class BookingController extends Controller
         $obj->transaction_id = $request->reference_id;
         $obj->payment_method = 'Gcash';
         $obj->card_last_digit = '';
-        $obj->paid_amount = $final_price;
+        $obj->paid_amount = $price;
         $obj->booking_date = date('d/m/Y');
         $obj->status = 'Pending';
         $obj->save();
@@ -592,9 +592,9 @@ class BookingController extends Controller
 
         // Include the booking details in the email message
         $message .= '<strong>Booking No</strong>: ' . $order_no;
-        $message .= '<br><strong>Transaction Id</strong>: ' . $request->reference_id;
-        $message .= '<br><strong>Payment Method</strong>: Stripe';
-        $message .= '<br><strong>Paid Amount</strong>: ₱' . number_format($final_price, 2);
+        $message .= '<br><strong>Reference Number</strong>: ' . $request->reference_id;
+        $message .= '<br><strong>Payment Method</strong>: Gcash';
+        $message .= '<br><strong>Paid Amount</strong>: ₱' . number_format($price, 2);
         $message .= '<br><strong>Booking Date</strong>: ' . \Carbon\Carbon::createFromFormat('d/m/Y', date('d/m/Y'))->format('F d, Y') . '<br>';
 
         // Loop through the booking details and add them to the email message
