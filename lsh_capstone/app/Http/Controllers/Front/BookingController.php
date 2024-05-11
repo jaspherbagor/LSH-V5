@@ -476,7 +476,7 @@ class BookingController extends Controller
         // $request->validate([
         //     'reference_id' => 'required', // Reference id must be provided
         // ]);
-        
+
         // Generate an order number based on the current time
         $order_no = time();
 
@@ -636,7 +636,7 @@ class BookingController extends Controller
         }
 
         // Add the closing part of the email message
-        $message .= '<p>At Labason Safe Haven, we are committed to providing you with a comfortable and memorable experience. Our team is dedicated to ensuring that your stay exceeds your expectations. </p>';
+        $message .= '<p>Please note that your booking is currently pending confirmation. Our team will review your booking request and confirm it as soon as possible. You will receive another email notification once your booking is confirmed.</p>';
         $message .= '<p>If you have any special requests or requirements, please feel free to let us know, and we will do our best to accommodate them.</p>';
         $message .= '<p>Once again, thank you for choosing Labason Safe Haven. We look forward to welcoming you and providing you with exceptional hospitality.</p>';
         $message .= 'Warm regards, <br>';
@@ -667,9 +667,9 @@ class BookingController extends Controller
         return redirect()->route('home')->with('success', 'Payment is waiting for approval!');
     }
 
-    public function maya(Request $request, $final_price)
+    public function maya(Request $request, $price)
     {
-        dd($final_price);
+        dd($price);
     }
 
 
