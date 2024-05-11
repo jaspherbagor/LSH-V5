@@ -278,7 +278,7 @@
                     </div>
 
                     <div class="container" id="transact_form_maya">
-                        <form action="{{ route('gcash', ['price' => $total_price]) }}" method="post">
+                        <form action="{{ route('maya', ['price' => $total_price]) }}" method="post">
                             @csrf
                             <div class="mb-3">
                               <label for="reference-number" class="form-label">Reference Number (Maya):</label>

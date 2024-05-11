@@ -24,7 +24,8 @@ class BookingController extends Controller
         $request->validate([
             'room_id' => 'required', // Room ID must be provided
             'checkin_checkout' => 'required', // Check-in and check-out date range must be provided
-            'adult' => 'required' // Number of adults must be provided
+            'adult' => 'required',// Number of adults must be provided
+            'children' => 'required' // Number of adults must be provided
         ]);
 
         // Split the check-in and check-out date range
