@@ -121,6 +121,10 @@
                         <div class="mt-3 text-center d-flex align-items-center justify-content-center container">
                             <img src="{{ asset('uploads/gcash-qr.webp') }}" alt="">
                         </div>
+                        <div class="text-start mt-3">
+                            <p class="fw-semibold mb-0 pb-0">Receiver's Name: <span class="fw-bold">Celine Lerios</span></p>
+                            <p class="fw-semibold">Number: <span class="fw-bold mt-0 pt-0">0974-567-7964</span></p>
+                        </div>
 
                     </div>
                 </div>
@@ -132,6 +136,10 @@
                         </div>
                         <div class="mt-3 text-center d-flex align-items-center justify-content-center container">
                             <img src="{{ asset('uploads/maya-qr.jpg') }}" alt="">
+                        </div>
+                        <div class="text-start mt-3">
+                            <p class="fw-semibold mb-0 pb-0">Receiver's Name: <span class="fw-bold">Celine Lerios</span></p>
+                            <p class="fw-semibold">Number: <span class="fw-bold mt-0 pt-0">0974-876-7550</span></p>
                         </div>
                     </div>
                 </div>
