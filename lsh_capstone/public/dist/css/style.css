@@ -1957,7 +1957,12 @@ body, html {
   min-height: 100%; }
 
 body {
-  background-color: #f4f6f9;
+  /* background-color: #f4f6f9; */
+  /* background: url('https://i.pinimg.com/originals/20/07/d6/2007d6dd4ca8f4b527d19c7baaefab7e.jpg'); */
+  backdrop-filter: blur(1px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   font-size: 14px;
   font-weight: 400;
   /* font-family: "Montserrat", sans-serif !important; */
