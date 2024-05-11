@@ -473,9 +473,6 @@ class BookingController extends Controller
 
     public function gcash(Request $request, $price)
     {
-        // $request->validate([
-        //     'reference_id' => 'required', // Reference id must be provided
-        // ]);
 
         // Generate an order number based on the current time
         $order_no = time();
@@ -669,7 +666,195 @@ class BookingController extends Controller
 
     public function maya(Request $request, $price)
     {
-        dd($price);
+        
+        // Generate an order number based on the current time
+        $order_no = time();
+
+        // Get the next available auto-increment ID from the orders table
+        $statement = DB::select("SHOW TABLE STATUS LIKE 'orders'");
+        $ai_id = $statement[0]->Auto_increment;
+
+        // Create a new order and populate it with the relevant details
+        $obj = new Order();
+        $obj->customer_id = Auth::guard('customer')->user()->id;
+        $obj->order_no = $order_no;
+        $obj->transaction_id = $request->reference_id;
+        $obj->payment_method = 'Maya';
+        $obj->card_last_digit = '';
+        $obj->paid_amount = $price;
+        $obj->booking_date = date('d/m/Y');
+        $obj->status = 'Pending';
+        $obj->save();
+
+        // Initialize arrays to hold cart session data
+        $arr_cart_room_id = [];
+        $arr_cart_checkin_date = [];
+        $arr_cart_checkout_date = [];
+        $arr_cart_adult = [];
+        $arr_cart_children = [];
+        $i = 0;
+
+        // Loop through each cart session data and populate the arrays
+        foreach (session()->get('cart_room_id') as $value) {
+            $arr_cart_room_id[$i] = $value;
+            $i++;
+        }
+
+        $i = 0;
+        foreach (session()->get('cart_checkin_date') as $value) {
+            $arr_cart_checkin_date[$i] = $value;
+            $i++;
+        }
+
+        $i = 0;
+        foreach (session()->get('cart_checkout_date') as $value) {
+            $arr_cart_checkout_date[$i] = $value;
+            $i++;
+        }
+
+        $i = 0;
+        foreach (session()->get('cart_adult') as $value) {
+            $arr_cart_adult[$i] = $value;
+            $i++;
+        }
+
+        $i = 0;
+        foreach (session()->get('cart_children') as $value) {
+            $arr_cart_children[$i] = $value;
+            $i++;
+        }
+
+        // Iterate through each cart room ID and process the booking
+        for ($i = 0; $i < count($arr_cart_room_id); $i++) {
+            $r_info = Room::where('id', $arr_cart_room_id[$i])->first();
+            $accommodation = Accommodation::where('id', $r_info->accommodation_id)->first();
+            $accommodation_type = AccommodationType::where('id', $accommodation->accommodation_type_id)->first();
+
+            // Convert the check-in and check-out dates to a consistent format
+            $d1 = explode('/', $arr_cart_checkin_date[$i]);
+            $d2 = explode('/', $arr_cart_checkout_date[$i]);
+            $d1_new = "{$d1[2]}-{$d1[1]}-{$d1[0]}";
+            $d2_new = "{$d2[2]}-{$d2[1]}-{$d2[0]}";
+
+            // Calculate the time difference between the check-in and check-out dates
+            $t1 = strtotime($d1_new);
+            $t2 = strtotime($d2_new);
+            $diff = ($t2 - $t1) / 60 / 60 / 24;
+
+            // Calculate the subtotal based on the accommodation type (hotel or other)
+            if ($accommodation_type->name !== 'Hotel') {
+                $daily_price = $r_info->price / 30;
+                $subtotal = $daily_price * $diff;
+            } else {
+                $subtotal = $r_info->price * $diff;
+            }
+
+
+            // Create a new order detail entry for each cart item
+            $obj = new OrderDetail();
+            $obj->order_id = $ai_id;
+            $obj->room_id = $arr_cart_room_id[$i];
+            $obj->order_no = $order_no;
+            $obj->checkin_date = $arr_cart_checkin_date[$i];
+            $obj->checkout_date = $arr_cart_checkout_date[$i];
+            $obj->adult = $arr_cart_adult[$i];
+            $obj->children = $arr_cart_children[$i];
+            $obj->subtotal = $subtotal;
+            $obj->save();
+
+            // Loop through the booking date range and save each date as a booked room entry
+            while ($t1 <= $t2) {
+                $obj = new BookedRoom();
+                $obj->booking_date = date('d/m/Y', $t1);
+                $obj->order_no = $order_no;
+                $obj->room_id = $arr_cart_room_id[$i];
+                $obj->save();
+
+                // Increment the booking date by one day
+                $t1 = strtotime('+1 day', $t1);
+            }
+        }
+
+        // Prepare the email message content for the booking confirmation
+        $subject = 'Your booking is waiting for approval';
+        $message = '<p>Dear <strong>' . Auth::guard('customer')->user()->name . '</strong>,</p>';
+        $message .= '<p>Thank you for choosing <strong>Labason Safe Haven</strong> for your upcoming stay. We appreciate your trust in us and are excited to welcome you to our establishment. The booking information is given below: </p>';
+
+        // Include the booking details in the email message
+        $message .= '<strong>Booking No</strong>: ' . $order_no;
+        $message .= '<br><strong>Reference Number</strong>: ' . $request->reference_id;
+        $message .= '<br><strong>Payment Method</strong>: Maya';
+        $message .= '<br><strong>Paid Amount</strong>: ₱' . number_format($price, 2);
+        $message .= '<br><strong>Booking Date</strong>: ' . \Carbon\Carbon::createFromFormat('d/m/Y', date('d/m/Y'))->format('F d, Y') . '<br>';
+
+        // Loop through the booking details and add them to the email message
+        for ($i = 0; $i < count($arr_cart_room_id); $i++) {
+            $r_info = Room::where('id', $arr_cart_room_id[$i])->first();
+            $accommodation = Accommodation::where('id', $r_info->accommodation_id)->first();
+            $accommodation_type = AccommodationType::where('id', $accommodation->accommodation_type_id)->first();
+
+            // Convert the check-in and check-out dates to a consistent format
+            $d1 = explode('/', $arr_cart_checkin_date[$i]);
+            $d2 = explode('/', $arr_cart_checkout_date[$i]);
+            $d1_new = "{$d1[2]}-{$d1[1]}-{$d1[0]}";
+            $d2_new = "{$d2[2]}-{$d2[1]}-{$d2[0]}";
+            $t1 = strtotime($d1_new);
+            $t2 = strtotime($d2_new);
+            $diff = ($t2 - $t1) / 60 / 60 / 24;
+
+            // Calculate the subtotal based on the accommodation type
+            if ($accommodation_type->name !== 'Hotel') {
+                $daily_price = $r_info->price / 30;
+                $subtotal = $daily_price * $diff;
+            } else {
+                $subtotal = $r_info->price * $diff;
+            }
+            
+            // Add the booking details to the email message
+            $message .= '<br><strong>Accommodation Name</strong>: ' . $accommodation->name;
+            $message .= '<br><strong>Room Name</strong>: ' . $r_info->room_name;
+            if ($accommodation_type->name !== 'Hotel') {
+                $message .= '<br><strong>Price Per Month</strong>: ₱' . number_format($r_info->price, 2);
+            } else {
+                $message .= '<br><strong>Price Per Night</strong>: ₱' . number_format($r_info->price, 2);
+            }
+            $message .= '<br><strong>Subtotal</strong>: ₱' . number_format($subtotal, 2);
+            $message .= '<br><strong>Checkin Date</strong>: ' . \Carbon\Carbon::createFromFormat('d/m/Y', $arr_cart_checkin_date[$i])->format('F d, Y');
+            $message .= '<br><strong>Checkout Date</strong>: ' . \Carbon\Carbon::createFromFormat('d/m/Y', $arr_cart_checkout_date[$i])->format('F d, Y');
+            $message .= '<br><strong>Adult</strong>: ' . $arr_cart_adult[$i];
+            $message .= '<br><strong>Children</strong>: ' . $arr_cart_children[$i] . '<br>';
+        }
+
+        // Add the closing part of the email message
+        $message .= '<p>Please note that your booking is currently pending confirmation. Our team will review your booking request and confirm it as soon as possible. You will receive another email notification once your booking is confirmed.</p>';
+        $message .= '<p>If you have any special requests or requirements, please feel free to let us know, and we will do our best to accommodate them.</p>';
+        $message .= '<p>Once again, thank you for choosing Labason Safe Haven. We look forward to welcoming you and providing you with exceptional hospitality.</p>';
+        $message .= 'Warm regards, <br>';
+        $message .= '<strong>Celine Lerios</strong> <br>';
+        $message .= '<strong>Chief Operating Officer</strong><br>';
+        $message .= '<strong>Labason Safe Haven</strong><br>';
+
+        // Get the customer's email address and send the email message
+        $customer_email = Auth::guard('customer')->user()->email;
+        Mail::to($customer_email)->send(new WebsiteMail($subject, $message));
+
+        // Clear the cart and billing session data
+        session()->forget('cart_room_id');
+        session()->forget('cart_checkin_date');
+        session()->forget('cart_checkout_date');
+        session()->forget('cart_adult');
+        session()->forget('cart_children');
+        session()->forget('billing_name');
+        session()->forget('billing_email');
+        session()->forget('billing_phone');
+        session()->forget('billing_country');
+        session()->forget('billing_address');
+        session()->forget('billing_province');
+        session()->forget('billing_city');
+        session()->forget('billing_zip');
+
+        // Redirect the customer to the home page with a success message
+        return redirect()->route('home')->with('success', 'Payment is waiting for approval!');dd($price);
     }
 
 
