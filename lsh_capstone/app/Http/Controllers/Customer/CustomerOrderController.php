@@ -24,6 +24,13 @@ class CustomerOrderController extends Controller
         return view('customer.orders', compact('orders'));
     }
 
+    public function pending_orders()
+    {
+        $pending_orders = Order::where('customer_id', Auth::guard('customer')->user()->id)->where('status', 'Pending')->get();
+
+        return view('customer.pending_orders', compact('pending_orders'));
+    }
+
     // Method to display the invoice for a specific order based on the given order ID
     public function invoice($id)
     {
