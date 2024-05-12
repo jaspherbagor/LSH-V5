@@ -82,7 +82,7 @@ class AdminOrderController extends Controller
         $customer_email = $customer->email;
         Mail::to($customer_email)->send(new WebsiteMail($subject, $message));
 
-        return redirect()->back()->with('success', 'Booking has been confirmed!');
+        return redirect()->back()->with('success', 'Booking has been declined!');
     }
 
     // Method to display an invoice for a specific order
