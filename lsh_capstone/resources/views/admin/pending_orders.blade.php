@@ -39,7 +39,7 @@
                                             <a href="" class="btn btn-danger mb-md-0 mb-1" onClick="return confirm('Are you sure you want to decline the booking?');" data-toggle="tooltip" data-placement="top" title="Decline">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
-                                            <a href="" class="btn btn-success mb-md-0 mb-1" onClick="return confirm('Are you sure you want to confirm the booking?');" data-toggle="tooltip" data-placement="top" title="Confirm">
+                                            <a href="{{ route('admin_order_confirm',$row->id) }}" class="btn btn-success mb-md-0 mb-1" onClick="return confirm('Are you sure you want to confirm the booking?');" data-toggle="tooltip" data-placement="top" title="Confirm">
                                                 <i class="fa fa-check" aria-hidden="true"></i>
                                             </a>
                                         </td>
