@@ -24,6 +24,13 @@ class AdminOrderController extends Controller
         return view('admin.orders', compact('orders'));
     }
 
+    public function pending_order()
+    {
+        $pending_orders = Order::where('status', 'Pending')->get();
+
+        return view('admin.pending_orders', compact('pending_orders'));
+    }
+
     // Method to display an invoice for a specific order
     public function invoice($id)
     {

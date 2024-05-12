@@ -187,6 +187,8 @@ Route::group(['middleware' => ['admin:admin']], function() {
 
     Route::get('/admin/order/view', [AdminOrderController::class, 'index'])->name('admin_order_view');
 
+    Route::get('/admin/pending-order/view', [AdminOrderController::class, 'pending_order'])->name('admin_pending_order_view');
+
     Route::get('/admin/order/invoice/{id}', [AdminOrderController::class, 'invoice'])->name('admin_invoice');
 
     Route::get('/admin/order/delete/{id}', [AdminOrderController::class, 'delete'])->name('admin_order_delete');
