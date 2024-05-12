@@ -183,6 +183,7 @@
                                             <th>Payment Method</th>
                                             <th>Booking Date</th>
                                             <th>Paid Amount</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -195,8 +196,17 @@
                                             <td>{{ \Carbon\Carbon::createFromFormat('d/m/Y', $row->booking_date)->format('F d, Y') }}</td>
                                             <td>₱{{ number_format($row->paid_amount, 2) }}</td>
                                             <td class="pt_10 pb_10">
-                                                <a href="{{ route('admin_invoice',$row->id) }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="View"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                                <a href="{{ route('admin_order_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                                @if($row->status === 'Completed')
+                                                <button class="btn btn-success">{{ $row->status }}</button>
+                                                @elseif($row->status === 'Pending')
+                                                <button class="btn btn-danger">{{ $row->status }}</button>
+                                                @else
+                                                <button class="btn btn-dark">{{ $row->status }}</button>
+                                                @endif
+                                            </td>
+                                            <td class="pt_10 pb_10">
+                                                <a href="{{ route('admin_invoice',$row->id) }}" class="btn btn-primary mb-1" data-toggle="tooltip" data-placement="top" title="View"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                                <a href="{{ route('admin_order_delete',$row->id) }}" class="btn btn-danger mb-1" onClick="return confirm('Are you sure?');" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
