@@ -474,6 +474,10 @@ class BookingController extends Controller
 
     public function gcash(Request $request, $price)
     {
+        // dd($request->reference_id);
+        // if(!$request->reference_id) {
+        //     return redirect()->route('payment')->with('error', 'Please input your reference number to complete the booking process!');
+        // }
 
         // Generate an order number based on the current time
         $order_no = time();
