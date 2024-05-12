@@ -17,16 +17,19 @@ class CustomerOrderController extends Controller
     public function index()
     {
         // Retrieve all orders for the authenticated customer
-        $orders = Order::where('customer_id', Auth::guard('customer')->user()->id)
-                       ->get();
+        $completed_orders = Order::where('customer_id', Auth::guard('customer')->user()->id)
+                    ->where('status', 'Completed')
+                    ->get();
         
         // Render the 'customer.orders' view and pass the list of orders to it
-        return view('customer.orders', compact('orders'));
+        return view('customer.orders', compact('completed_orders'));
     }
 
     public function pending_order()
     {
-        $pending_orders = Order::where('customer_id', Auth::guard('customer')->user()->id)->where('status', 'Pending')->get();
+        $pending_orders = Order::where('customer_id', Auth::guard('customer')->user()->id)
+                    ->where('status', 'Pending')
+                    ->get();
 
         return view('customer.pending_orders', compact('pending_orders'));
     }

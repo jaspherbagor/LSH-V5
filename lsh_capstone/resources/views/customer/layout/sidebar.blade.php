@@ -15,7 +15,7 @@
                 <a class="nav-link" href="{{ route('customer_home') }}"><i class="fa fa-tachometer"></i> <span>Dashboard</span></a>
             </li>
 
-            <li class="{{ Request::is('customer/order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customer_order_view') }}"><i class="fa fa-list-alt"></i> <span>Bookings</span></a></li>
+            <li class="{{ Request::is('customer/order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customer_order_view') }}"><i class="fa fa-list-alt"></i> <span>Completed Bookings</span></a></li>
 
             <li class="{{ Request::is('customer/pending-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customer_pending_order_view') }}"><i class="fa fa-clock-o"></i> <span>Pending Bookings</span></a></li>
 

@@ -1,6 +1,6 @@
 @extends('customer.layout.app')
 
-@section('heading', 'My Bookings')
+@section('heading', 'Completed Bookings')
 
 @section('main_content')
     <div class="section-body">
@@ -17,11 +17,12 @@
                                         <th>Payment Method</th>
                                         <th>Booking Date</th>
                                         <th>Paid Amount</th>
+                                        <th>Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($orders as $row)
+                                    @foreach($completed_orders as $row)
 
                                     {{-- @php
                                     $order_detail = \App\Models\OrderDetail::where('order_no', $row->order_no)->first();
@@ -34,6 +35,9 @@
                                         <td>{{ $row->payment_method }}</td>
                                         <td>{{ $row->booking_date }}</td>
                                         <td>{{ $row->paid_amount }}</td>
+                                        <td class="pt_10 pb_10">
+                                            <button type="button" class="btn btn-success">{{ $row->status }}</button>
+                                        </td>
                                         <td class="pt_10 pb_10">
                                             <a href="{{ route('customer_invoice',$row->id) }}" class="btn btn-info mb-md-0 mb-1" data-toggle="tooltip" data-placement="top" title="Invoice"><i class="fa fa-sticky-note-o" aria-hidden="true"></i></a>
                                             {{-- <a href="{{ route('customer_review_add', $accommodation->id) }}" class="btn btn-success mb-md-0 mb-1" data-toggle="tooltip" data-placement="top" title="Rate Now"><i class="fa fa-star" aria-hidden="true"></i></a> --}}
