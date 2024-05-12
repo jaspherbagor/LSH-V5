@@ -24,7 +24,7 @@ class CustomerOrderController extends Controller
         return view('customer.orders', compact('orders'));
     }
 
-    public function pending_orders()
+    public function pending_order()
     {
         $pending_orders = Order::where('customer_id', Auth::guard('customer')->user()->id)->where('status', 'Pending')->get();
 
