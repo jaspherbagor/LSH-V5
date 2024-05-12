@@ -76,6 +76,7 @@
                                             <th>Payment Method</th>
                                             <th>Booking Date</th>
                                             <th>Paid Amount</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -87,6 +88,15 @@
                                             <td>{{ $row->payment_method }}</td>
                                             <td>{{ \Carbon\Carbon::createFromFormat('d/m/Y', $row->booking_date)->format('F d, Y') }}</td>
                                             <td>₱{{ number_format($row->paid_amount, 2) }}</td>
+                                            <td class="pt_10 pb_10">
+                                                @if($row->status === 'Completed')
+                                                <button class="btn btn-success">{{ $row->status }}</button>
+                                                @elseif($row->status === 'Pending')
+                                                <button class="btn btn-danger">{{ $row->status }}</button>
+                                                @else
+                                                <button class="btn btn-dark">{{ $row->status }}</button>
+                                                @endif
+                                            </td>
                                             <td class="pt_10 pb_10">
                                                 <a href="{{ route('customer_invoice',$row->id) }}" class="btn btn-primary">Detail</a>
                                             </td>
