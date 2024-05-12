@@ -13,7 +13,7 @@
                                 <thead>
                                     <tr>
                                         <th>SL</th>
-                                        <th>Booking No</th>
+                                        <th>Reference No.</th>
                                         <th>Payment Method</th>
                                         <th>Booking Date</th>
                                         <th>Paid Amount</th>
@@ -25,7 +25,7 @@
                                     @foreach($pending_orders as $row)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $row->order_no }}</td>
+                                        <td>{{ $row->transaction_id }}</td>
                                         <td>{{ $row->payment_method }}</td>
                                         <td>{{ \Carbon\Carbon::createFromFormat('d/m/Y', $row->booking_date)->format('F d, Y') }}</td>
                                         <td>₱{{ number_format($row->paid_amount, 2) }}</td>
@@ -36,8 +36,11 @@
                                             <a href="{{ route('admin_invoice',$row->id) }}" class="btn btn-primary mb-1" data-toggle="tooltip" data-placement="top" title="Detail">
                                                 <i class="fa fa-info-circle" aria-hidden="true"></i>
                                             </a>
-                                            <a href="{{ route('admin_order_delete',$row->id) }}" class="btn btn-danger mb-md-0 mb-1" onClick="return confirm('Are you sure you want to delete order?');" data-toggle="tooltip" data-placement="top" title="Delete">
-                                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                                            <a href="" class="btn btn-danger mb-md-0 mb-1" onClick="return confirm('Are you sure you want to decline the booking?');" data-toggle="tooltip" data-placement="top" title="Decline">
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </a>
+                                            <a href="" class="btn btn-success mb-md-0 mb-1" onClick="return confirm('Are you sure you want to confirm the booking?');" data-toggle="tooltip" data-placement="top" title="Confirm">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
                                             </a>
                                         </td>
                                         
