@@ -36,7 +36,7 @@
                                             <a href="{{ route('admin_invoice',$row->id) }}" class="btn btn-primary mb-1" data-toggle="tooltip" data-placement="top" title="Detail">
                                                 <i class="fa fa-info-circle" aria-hidden="true"></i>
                                             </a>
-                                            <a href="" class="btn btn-danger mb-md-0 mb-1" onClick="return confirm('Are you sure you want to decline the booking?');" data-toggle="tooltip" data-placement="top" title="Decline">
+                                            <a href="{{ route('admin_order_decline',$row->id) }}" class="btn btn-danger mb-md-0 mb-1" onClick="return confirm('Are you sure you want to decline the booking?');" data-toggle="tooltip" data-placement="top" title="Decline">
                                                 <i class="fa fa-times" aria-hidden="true"></i>
                                             </a>
                                             <a href="{{ route('admin_order_confirm',$row->id) }}" class="btn btn-success mb-md-0 mb-1" onClick="return confirm('Are you sure you want to confirm the booking?');" data-toggle="tooltip" data-placement="top" title="Confirm">

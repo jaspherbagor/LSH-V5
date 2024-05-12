@@ -66,7 +66,7 @@ class AdminOrderController extends Controller
         $order_data->update();
 
         $customer = Customer::where('id', $order_data->customer_id)->first();
-        $subject = 'Your booking has been confirmed';
+        $subject = 'Your booking has been declined';
         $message = '<p>Dear <strong>' . $customer->name . '</strong>,</p>';
         $message .= '<p>We regret to inform you that there was an issue processing your booking with booking number: <strong>'.$order_data->order_no . '</strong>. Unfortunately, the reference number provided for the payment method does not match our records.</p>';
 
