@@ -106,57 +106,6 @@
             </div>
         </a>
     </div>
-    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-        <a href="{{ route('admin_subscriber_show') }}">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-website">
-                    <i class="fa fa-users"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Apartments</h4>
-                    </div>
-                    <div class="card-body">
-                        3
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-        <a href="{{ route('admin_subscriber_show') }}">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-website">
-                    <i class="fa fa-users"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Hotels</h4>
-                    </div>
-                    <div class="card-body">
-                        2
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-        <a href="{{ route('admin_subscriber_show') }}">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-website">
-                    <i class="fa fa-users"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Boarding Houses</h4>
-                    </div>
-                    <div class="card-body">
-                        2
-                    </div>
-                </div>
-            </div>
-        </a>
-    </div>
 
 
 
