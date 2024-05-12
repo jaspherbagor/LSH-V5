@@ -59,6 +59,32 @@ class AdminOrderController extends Controller
         return redirect()->back()->with('success', 'Booking has been confirmed!');
     }
 
+    public function decline($id)
+    {
+        $order_data = Order::where('id', $id)->first();
+        $order_data->status = 'Declined';
+        $order_data->update();
+
+        $customer = Customer::where('id', $order_data->customer_id)->first();
+        $subject = 'Your booking has been confirmed';
+        $message = '<p>Dear <strong>' . $customer->name . '</strong>,</p>';
+        $message .= '<p>We regret to inform you that there was an issue processing your booking with booking number: <strong>'.$order_data->order_no . '</strong>. Unfortunately, the reference number provided for the payment method does not match our records.</p>';
+
+        $message .= '<p>To proceed with your booking, please ensure that the reference number provided matches the one associated with your payment transaction. Once you have verified the reference number, please reply to this email with the correct information, or contact our customer support team at <strong>contact@labason.space</strong> for further assistance.</p>';
+        $message .= '<p>We apologize for any inconvenience this may have caused and appreciate your prompt attention to this matter. Our team is here to assist you and ensure a smooth booking process.</p>';
+        $message .= '<p>Thank you for choosing Labason Safe Haven. We value your trust and look forward to resolving this issue promptly so we can welcome you to our establishment.</p>';
+        $message .= 'Warm regards, <br>';
+        $message .= '<strong>Celine Lerios</strong> <br>';
+        $message .= '<strong>Chief Operating Officer</strong><br>';
+        $message .= '<strong>Labason Safe Haven</strong><br>';
+
+        // Get the customer's email address and send the email message
+        $customer_email = $customer->email;
+        Mail::to($customer_email)->send(new WebsiteMail($subject, $message));
+
+        return redirect()->back()->with('success', 'Booking has been confirmed!');
+    }
+
     // Method to display an invoice for a specific order
     public function invoice($id)
     {
