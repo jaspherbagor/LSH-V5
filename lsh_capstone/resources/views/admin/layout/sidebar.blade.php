@@ -53,6 +53,8 @@
 
             <li class="{{ Request::is('admin/pending-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_pending_order_view') }}"><i class="fa fa-clock-o"></i> <span>Pending Bookings</span></a></li>
 
+            <li class="{{ Request::is('admin/declined-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_declined_order_view') }}"><i class="fa fa-times"></i> <span>Declined Bookings</span></a></li>
+
             <li class="{{ Request::is('admin/review/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_review_view') }}"><i class="fa fa-star"></i> <span>Accommodation Reviews</span></a></li>
 
             <li class="{{ Request::is('admin/slide/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_slide_view') }}"><i class="fa fa-sliders"></i> <span>Slide</span></a></li>

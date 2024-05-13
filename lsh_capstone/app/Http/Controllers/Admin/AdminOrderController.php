@@ -33,6 +33,13 @@ class AdminOrderController extends Controller
         return view('admin.pending_orders', compact('pending_orders'));
     }
 
+    public function declined_order()
+    {
+        $declined_orders = Order::where('status', 'Declined')->get();
+
+        return view('admin.declined_orders', compact('declined_orders'));
+    }
+
     public function confirm($id)
     {
         $order_data = Order::where('id', $id)->first();

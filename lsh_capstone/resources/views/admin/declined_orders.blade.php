@@ -1,4 +1,4 @@
-@extends('customer.layout.app')
+@extends('admin.layout.app')
 
 @section('heading', 'Declined Bookings')
 
@@ -33,7 +33,10 @@
                                             <button type="button" class="btn btn-dark">{{ $row->status }}</button>
                                         </td>
                                         <td class="pt_10 pb_10">
-                                            <a href="{{ route('customer_invoice',$row->id) }}" class="btn btn-info mb-md-0 mb-1" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-sticky-note-o" aria-hidden="true"></i></a>
+                                            <a href="{{ route('customer_invoice',$row->id) }}" class="btn btn-info mb-1" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-sticky-note-o" aria-hidden="true"></i></a>
+                                            <a href="{{ route('admin_order_confirm',$row->id) }}" class="btn btn-success mb-md-0 mb-1" onClick="return confirm('Are you sure you want to confirm the declined booking?');" data-toggle="tooltip" data-placement="top" title="Confirm">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                            </a>
                                         </td>
                                         
                                     </tr>
