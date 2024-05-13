@@ -180,6 +180,8 @@ Route::group(['middleware' => ['admin:admin']], function() {
 
     Route::get('/admin/payment', [AdminPaymentController::class, 'index'])->name('admin_payment');
 
+    Route::post('/admin/payment/update', [AdminPaymentController::class, 'update'])->name('admin_payment_update');
+
     Route::get('/admin/datewise-rooms', [AdminDatewiseRoomController::class, 'index'])->name('admin_datewise_rooms');
 
     Route::post('/admin/datewise-rooms/submit', [AdminDatewiseRoomController::class, 'show'])->name('admin_datewise_rooms_submit');
