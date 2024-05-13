@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 09, 2024 at 03:56 PM
+-- Generation Time: May 13, 2024 at 11:18 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `v4_lsh`
+-- Database: `v5_lsh`
 --
 
 -- --------------------------------------------------------
@@ -235,7 +235,34 @@ INSERT INTO `booked_rooms` (`id`, `booking_date`, `order_no`, `room_id`, `create
 (50, '27/05/2024', '1713955856', 3, '2024-04-24 02:50:56', '2024-04-24 02:50:56'),
 (51, '28/05/2024', '1713955856', 3, '2024-04-24 02:50:56', '2024-04-24 02:50:56'),
 (52, '29/05/2024', '1713955856', 3, '2024-04-24 02:50:56', '2024-04-24 02:50:56'),
-(53, '30/05/2024', '1713955856', 3, '2024-04-24 02:50:56', '2024-04-24 02:50:56');
+(53, '30/05/2024', '1713955856', 3, '2024-04-24 02:50:56', '2024-04-24 02:50:56'),
+(54, '19/06/2024', '1715409446', 2, '2024-05-10 22:37:26', '2024-05-10 22:37:26'),
+(55, '20/06/2024', '1715409446', 2, '2024-05-10 22:37:26', '2024-05-10 22:37:26'),
+(56, '21/06/2024', '1715409446', 2, '2024-05-10 22:37:26', '2024-05-10 22:37:26'),
+(57, '22/06/2024', '1715409446', 2, '2024-05-10 22:37:26', '2024-05-10 22:37:26'),
+(58, '17/06/2024', '1715411114', 3, '2024-05-10 23:05:14', '2024-05-10 23:05:14'),
+(59, '18/06/2024', '1715411114', 3, '2024-05-10 23:05:14', '2024-05-10 23:05:14'),
+(60, '19/06/2024', '1715411114', 3, '2024-05-10 23:05:14', '2024-05-10 23:05:14'),
+(61, '20/06/2024', '1715411114', 3, '2024-05-10 23:05:14', '2024-05-10 23:05:14'),
+(62, '21/06/2024', '1715411114', 3, '2024-05-10 23:05:14', '2024-05-10 23:05:14'),
+(63, '01/07/2024', '1715411744', 3, '2024-05-10 23:15:44', '2024-05-10 23:15:44'),
+(64, '02/07/2024', '1715411744', 3, '2024-05-10 23:15:44', '2024-05-10 23:15:44'),
+(65, '03/07/2024', '1715411744', 3, '2024-05-10 23:15:44', '2024-05-10 23:15:44'),
+(66, '04/07/2024', '1715411744', 3, '2024-05-10 23:15:44', '2024-05-10 23:15:44'),
+(67, '05/07/2024', '1715411744', 3, '2024-05-10 23:15:44', '2024-05-10 23:15:44'),
+(68, '07/07/2024', '1715412096', 3, '2024-05-10 23:21:36', '2024-05-10 23:21:36'),
+(69, '08/07/2024', '1715412096', 3, '2024-05-10 23:21:36', '2024-05-10 23:21:36'),
+(70, '09/07/2024', '1715412096', 3, '2024-05-10 23:21:36', '2024-05-10 23:21:36'),
+(71, '10/07/2024', '1715412096', 3, '2024-05-10 23:21:36', '2024-05-10 23:21:36'),
+(72, '11/07/2024', '1715412096', 3, '2024-05-10 23:21:36', '2024-05-10 23:21:36'),
+(73, '12/07/2024', '1715412096', 3, '2024-05-10 23:21:36', '2024-05-10 23:21:36'),
+(74, '13/07/2024', '1715412096', 3, '2024-05-10 23:21:36', '2024-05-10 23:21:36'),
+(75, '24/06/2024', '1715523168', 2, '2024-05-12 06:12:48', '2024-05-12 06:12:48'),
+(76, '25/06/2024', '1715523168', 2, '2024-05-12 06:12:48', '2024-05-12 06:12:48'),
+(77, '17/06/2024', '1715568202', 1, '2024-05-12 18:43:22', '2024-05-12 18:43:22'),
+(78, '18/06/2024', '1715568202', 1, '2024-05-12 18:43:22', '2024-05-12 18:43:22'),
+(79, '19/06/2024', '1715568202', 1, '2024-05-12 18:43:22', '2024-05-12 18:43:22'),
+(80, '20/06/2024', '1715568202', 1, '2024-05-12 18:43:22', '2024-05-12 18:43:22');
 
 -- --------------------------------------------------------
 
@@ -266,7 +293,7 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `name`, `email`, `password`, `phone`, `country`, `address`, `province`, `city`, `zip`, `photo`, `token`, `status`, `created_at`, `updated_at`) VALUES
-(2, 'Momar Kiram', 'momar@gmail.com', '$2y$10$6PFkgZI0ZKyW9R51hhQXh.yJ9z8mBqFWDlt5V5XY7qKlzIzOHUWea', '09123456789', 'Philippines', 'Antonino', 'Zamboanga del Norte', 'Labason', '7117', '1713523556.jpg', 'edc252625cc64b8faca465ac422aff2bf2ed6982c359ba757597af6d3605f2d5', 1, '2024-04-06 02:11:39', '2024-04-26 02:02:12');
+(2, 'Momar Kiram', 'momar@gmail.com', '$2y$10$6PFkgZI0ZKyW9R51hhQXh.yJ9z8mBqFWDlt5V5XY7qKlzIzOHUWea', '09123456789', 'Philippines', 'Antonino', 'Zamboanga del Norte', 'Labason', '7117', '1713523556.jpg', 'edc252625cc64b8faca465ac422aff2bf2ed6982c359ba757597af6d3605f2d5', 1, '2024-04-06 02:11:39', '2024-05-10 17:15:25');
 
 -- --------------------------------------------------------
 
@@ -371,7 +398,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (22, '2024_03_30_011609_create_orders_table', 4),
 (23, '2024_03_30_011652_create_order_details_table', 5),
 (24, '2024_04_01_023404_create_booked_rooms_table', 6),
-(25, '2024_04_11_131657_create_accommodation_rates_table', 7);
+(25, '2024_04_11_131657_create_accommodation_rates_table', 7),
+(26, '2024_05_13_074942_create_payments_table', 8);
 
 -- --------------------------------------------------------
 
@@ -402,7 +430,14 @@ INSERT INTO `orders` (`id`, `customer_id`, `order_no`, `transaction_id`, `paymen
 (2, 2, '1713416330', 'txn_3P6n3ZFsO12X9vvH1l7F1BRY', 'Stripe', '4242', '4580', '18/04/2024', 'Completed', '2024-04-17 20:58:50', '2024-04-17 20:58:50'),
 (3, 2, '1713417487', 'txn_3P6nMIFsO12X9vvH1jTlAGgc', 'Stripe', '4242', '2400', '18/04/2024', 'Completed', '2024-04-17 21:18:07', '2024-04-17 21:18:07'),
 (4, 2, '1713418266', 'txn_3P6nYrFsO12X9vvH15FyQhp0', 'Stripe', '4242', '1400', '18/04/2024', 'Completed', '2024-04-17 21:31:06', '2024-04-17 21:31:06'),
-(5, 2, '1713955856', 'txn_3P93PXFsO12X9vvH0Cj6r9Qt', 'Stripe', '4242', '1880', '24/04/2024', 'Completed', '2024-04-24 02:50:56', '2024-04-24 02:50:56');
+(5, 2, '1713955856', 'txn_3P93PXFsO12X9vvH0Cj6r9Qt', 'Stripe', '4242', '1880', '24/04/2024', 'Completed', '2024-04-24 02:50:56', '2024-04-24 02:50:56'),
+(6, 2, '1715409446', 'jgfhfdsdsadsdfghj', 'Gcash', '', '1050', '11/05/2024', 'Completed', '2024-05-10 22:37:26', '2024-05-12 05:35:31'),
+(7, 2, '1715411114', '552345768789853456789', 'Gcash', '', '480', '11/05/2024', 'Pending', '2024-05-10 23:05:14', '2024-05-10 23:05:14'),
+(8, 2, '1715411744', '965434567890-0876', 'Gcash', '', '480', '11/05/2024', 'Pending', '2024-05-10 23:15:44', '2024-05-10 23:15:44'),
+(9, 2, '1715411883', '984342134542115689', 'Maya', '', '720', '11/05/2024', 'Pending', '2024-05-10 23:18:04', '2024-05-10 23:18:04'),
+(10, 2, '1715412096', '5457--07643114567', 'Maya', '', '720', '11/05/2024', 'Completed', '2024-05-10 23:21:36', '2024-05-12 19:30:04'),
+(11, 2, '1715523168', 'txn_3PFd8rFsO12X9vvH0s9xROyZ', 'Stripe', '4242', '350', '12/05/2024', 'Completed', '2024-05-12 06:12:48', '2024-05-12 06:12:48'),
+(12, 2, '1715568202', 'uihyfgyuitedturseuyihyiouuytuut5ru', 'Gcash', '', '1350', '13/05/2024', 'Pending', '2024-05-12 18:43:22', '2024-05-12 18:43:22');
 
 -- --------------------------------------------------------
 
@@ -435,7 +470,13 @@ INSERT INTO `order_details` (`id`, `order_id`, `room_id`, `order_no`, `checkin_d
 (4, 3, 3, 1713417487, '27/04/2024', '17/05/2024', '2', '0', '2400', '2024-04-17 21:18:07', '2024-04-17 21:18:07'),
 (5, 4, 2, 1713418266, '26/04/2024', '30/04/2024', '1', '0', '1400', '2024-04-17 21:31:06', '2024-04-17 21:31:06'),
 (6, 5, 2, 1713955856, '27/05/2024', '31/05/2024', '2', '0', '1400', '2024-04-24 02:50:56', '2024-04-24 02:50:56'),
-(7, 5, 3, 1713955856, '27/05/2024', '31/05/2024', '2', '0', '480', '2024-04-24 02:50:56', '2024-04-24 02:50:56');
+(7, 5, 3, 1713955856, '27/05/2024', '31/05/2024', '2', '0', '480', '2024-04-24 02:50:56', '2024-04-24 02:50:56'),
+(8, 6, 2, 1715409446, '19/06/2024', '22/06/2024', '2', '0', '1050', '2024-05-10 22:37:26', '2024-05-10 22:37:26'),
+(9, 7, 3, 1715411114, '17/06/2024', '21/06/2024', '3', '0', '480', '2024-05-10 23:05:14', '2024-05-10 23:05:14'),
+(10, 8, 3, 1715411744, '01/07/2024', '05/07/2024', '2', '0', '480', '2024-05-10 23:15:44', '2024-05-10 23:15:44'),
+(11, 10, 3, 1715412096, '07/07/2024', '13/07/2024', '2', '0', '720', '2024-05-10 23:21:36', '2024-05-10 23:21:36'),
+(12, 11, 2, 1715523168, '24/06/2024', '25/06/2024', '2', '0', '350', '2024-05-12 06:12:48', '2024-05-12 06:12:48'),
+(13, 12, 1, 1715568202, '17/06/2024', '20/06/2024', '2', '0', '1350', '2024-05-12 18:43:22', '2024-05-12 18:43:22');
 
 -- --------------------------------------------------------
 
@@ -497,6 +538,31 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payments`
+--
+
+CREATE TABLE `payments` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `gcash_qr` varchar(255) NOT NULL,
+  `gcash_name` varchar(255) NOT NULL,
+  `gcash_number` varchar(255) NOT NULL,
+  `maya_qr` varchar(255) NOT NULL,
+  `maya_name` varchar(255) NOT NULL,
+  `maya_number` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `payments`
+--
+
+INSERT INTO `payments` (`id`, `gcash_qr`, `gcash_name`, `gcash_number`, `maya_qr`, `maya_name`, `maya_number`, `created_at`, `updated_at`) VALUES
+(1, '1715590306.png', 'Anselmo Lerios', '0936-684-0915', 'maya-qr.jpg', 'Momar Kiram', '0970-077-3326', NULL, '2024-05-13 00:51:46');
 
 -- --------------------------------------------------------
 
@@ -563,9 +629,9 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `photo`, `heading`, `short_content`, `content`, `total_view`, `created_at`, `updated_at`) VALUES
-(1, '1712208486.jpg', 'Essential Travel Packing Tips: Pack Smarter, Travel Lighter: Your Guide to Stress-Free Packing', 'Discover top tips and tricks to pack efficiently for your next adventure and travel stress-free.', '<p>Packing efficiently for a trip can be a daunting task, but with the right strategies, you can streamline the process and ensure you have everything you need while traveling light. In this article, we\'ll explore essential travel packing tips to help you pack smarter and travel lighter on your next adventure.</p><p><b>1. Make a Packing List:</b>\r\n<br class=\"Apple-interchange-newline\"></p><p>Before you start packing, make a list of essential items you\'ll need for your trip. This will help you stay organized and avoid forgetting important items. Divide your list into categories such as clothing, toiletries, electronics, and documents to ensure you don\'t overlook anything.</p><p><b>2. Choose Versatile Clothing:</b></p><p>When selecting clothing for your trip, opt for versatile pieces that can be mixed and matched to create multiple outfits. Choose neutral colors and fabrics that are lightweight, breathable, and wrinkle-resistant. Consider the climate and activities you\'ll be participating in to determine the appropriate clothing items to pack.</p><p><b>3. Roll Your Clothes:</b></p><p>Maximize space in your suitcase by rolling your clothes instead of folding them. Rolling your clothes not only saves space but also helps prevent wrinkles and creases. Start with heavier items like jeans and sweaters at the bottom of your suitcase and roll lighter items like t-shirts and underwear on top.</p><p><b>4. Use Packing Cubes:</b></p><p>Invest in packing cubes to keep your clothing and accessories organized and easy to find. Packing cubes come in various sizes and colors and are designed to fit neatly inside your suitcase. Use different cubes for different types of clothing or organize them by outfit to make unpacking a breeze.</p><p><b>5. Pack Light:</b></p><p>When it comes to packing, less is more. Try to pack only the essentials and leave behind items you can live without. Consider your destination and the amenities available, such as laundry facilities, to determine how many clothing items you\'ll need. Remember, you can always buy things you need while traveling.</p><p><b>6. Layer Your Clothing:</b></p><p>Layering is key to staying comfortable and adapting to changing weather conditions while traveling. Pack lightweight layers that can be easily added or removed as needed, such as t-shirts, sweaters, and jackets. Choose fabrics that are moisture-wicking and quick-drying for maximum versatility.</p><p><b>7. Pack Multi-Purpose Items:</b></p><p>Save space in your suitcase by packing multi-purpose items that serve multiple functions. For example, a sarong can double as a beach towel, a picnic blanket, or a scarf, while a lightweight scarf can be used as a wrap, a headscarf, or a makeshift bag.</p><p><b>8. Minimize Toiletries:</b></p><p>Pack travel-sized toiletries to save space in your luggage and comply with TSA regulations. Look for mini versions of your favorite products or invest in reusable travel containers to transfer your toiletries into. Consider purchasing toiletries like shampoo, conditioner, and sunscreen at your destination to save space and weight in your luggage.</p><p><b>9. Leave Room for Souvenirs:</b></p><p>Leave some empty space in your suitcase for souvenirs and gifts you may acquire during your trip. Consider packing a collapsible bag or duffel for extra storage or purchasing a lightweight suitcase with expandable compartments. Remember to check baggage allowances and weight restrictions for both outbound and return flights to avoid excess baggage fees.</p><p><b>10. Pack Essential Documents:</b></p><p>Finally, don\'t forget to pack essential documents such as your passport, visa, travel insurance, and itinerary. Keep these documents organized and easily accessible in a waterproof travel wallet or pouch. Consider making photocopies or digital scans of important documents and storing them securely online or in a separate location in case of loss or theft.</p><p>By following these packing tips, you can pack smarter, travel lighter, and enjoy a stress-free journey to your destination. Bon voyage!</p>', 14, '2024-04-03 21:28:06', '2024-04-30 04:11:45'),
-(2, '1712215345.jpg', 'Top 10 Must-Have Travel Accessories: Essential Gear for Your Journey', 'Explore essential travel accessories that can make your journey more comfortable and enjoyable.', '<p>When preparing for a trip, having the right travel accessories can make all the difference in enhancing your travel experience. In this article, we\'ll explore the top 10 must-have travel accessories that you should consider packing for your next adventure.</p><p><b>1. Travel Pillow:</b></p><p>A comfortable travel pillow can provide much-needed support and help you get some rest during long flights or bus rides.</p><p><b>2. Portable Charger:</b></p><p>Keep your devices powered up on the go with a portable charger. This handy accessory ensures you never run out of battery while traveling.</p><p><b>3. Travel Adapter:</b></p><p>A universal travel adapter allows you to charge your devices in any country, making it essential for international travel.</p><p><b>4. Noise-Canceling Headphones:</b></p><p>Block out unwanted noise and enjoy your favorite music or podcasts with noise-canceling headphones. Perfect for long flights or noisy environments.</p><p><b>5. Travel Wallet:</b></p><p>Keep your passport, boarding passes, and important documents organized and secure with a dedicated travel wallet.</p><p><b>6. Reusable Water Bottle:</b></p><p>Stay hydrated while traveling with a reusable water bottle. Many airports and tourist attractions have water refill stations, allowing you to avoid single-use plastic bottles.</p><p><b>7. Packing Cubes:</b></p><p>Keep your clothing and accessories organized and easy to find with packing cubes. These handy organizers make packing and unpacking a breeze.</p><p><b>8. Lightweight Backpack:</b></p><p>A lightweight backpack is perfect for day trips and excursions, allowing you to carry your essentials comfortably while exploring.</p><p><b>9. Travel-Sized Toiletries:</b></p><p>Pack travel-sized toiletries to save space in your luggage and comply with TSA regulations. Look for mini versions of your favorite products or invest in reusable travel containers.</p><p><b>10. Luggage Locks:</b></p><p>Keep your belongings safe and secure with luggage locks. Choose TSA-approved locks for hassle-free security checks at airports.</p><p>By packing these essential travel accessories, you can ensure you\'re prepared for any adventure and make the most of your travel experience.</p>', 24, '2024-04-03 22:37:04', '2024-05-06 08:01:51'),
-(3, '1712213126.jpg', 'Global Gastronomy: 5 Culinary Adventures for Solo Foodies: Savor the World\'s Flavors', 'Dive into a world of flavors with these 5 culinary adventures, perfect for solo travelers passionate about food.', '<p>For solo travelers who are passionate about exploring different cuisines and culinary traditions, the world is a treasure trove of gastronomic delights waiting to be discovered. In this article, we\'ll explore 5 culinary experiences that promise solo foodies unforgettable tastes and flavors from around the globe.</p><p><br></p><p><b>1. Street Food Safari:</b></p><p>Embarking on a street food safari is like diving headfirst into the heart of a destination\'s culinary culture. Wander through bustling street markets, where the air is thick with the aromas of sizzling meats, aromatic spices, and freshly baked goods. Sample a variety of dishes from local vendors and food stalls, from piping hot dumplings and crispy spring rolls to sweet treats like freshly made crepes and exotic fruit skewers. Street food markets are not only a feast for the senses but also a window into the daily lives of locals, where you can mingle with street vendors and fellow food enthusiasts alike.</p><p><br></p><p><b>2. Cooking Class Adventure:</b></p><p>A cooking class adventure offers solo travelers the opportunity to roll up their sleeves and get hands-on in the kitchen. Whether it\'s mastering the art of making handmade pasta in Italy, whipping up spicy curries in Thailand, or learning the secrets of sushi-making in Japan, cooking classes provide an immersive culinary experience like no other. Led by expert chefs and local cooks, these classes delve deep into the traditional techniques, ingredients, and flavors of a destination\'s cuisine. Not only do cooking classes offer solo travelers the chance to learn new skills and recipes, but they also provide a unique insight into the cultural heritage and culinary traditions of a region.</p><p><br></p><p><b>3. Market Exploration:</b></p><p>Exploring bustling markets is a sensory adventure that solo travelers won\'t want to miss. From sprawling outdoor bazaars to historic indoor markets, these vibrant hubs of activity are a treasure trove of fresh produce, spices, and artisanal products unique to each destination. Wander through stalls piled high with colorful fruits and vegetables, inhale the intoxicating scents of exotic spices and herbs, and browse handcrafted goods and souvenirs made by local artisans. Whether you\'re bargaining for the freshest seafood, sampling street snacks, or simply soaking up the bustling atmosphere, market exploration offers solo travelers an authentic taste of local life and culture.</p><p><br></p><p><b>4. Food Tour Feast:</b></p><p>Joining a food tour is the perfect way for solo travelers to discover the culinary secrets of a destination with the guidance of local experts. Led by knowledgeable guides, food tours take you on a gastronomic journey through the streets and neighborhoods of a city, where you\'ll sample an array of dishes from hidden gems and local eateries. From savory street food to sweet treats, each stop offers a tantalizing taste of the region\'s culinary scene, accompanied by fascinating stories and insights into the history and culture behind the food. Whether you\'re exploring bustling night markets, historic food districts, or off-the-beaten-path neighborhoods, a food tour feast promises solo travelers an unforgettable culinary adventure filled with flavors, aromas, and discoveries.</p><p><br></p><p><b>5. Dining Solo:</b></p><p>Dining solo is a liberating experience that allows solo travelers to indulge their culinary cravings on their own terms. Whether you\'re sampling street food from a bustling market stall, enjoying a leisurely meal at a cozy cafe, or dining at a fine-dining restaurant, solo dining offers the freedom to explore a destination\'s culinary scene at your own pace. Solo travelers can savor each bite, engage with locals and fellow diners, and soak up the ambiance of their surroundings without the pressure of keeping up with group dynamics. Whether you\'re a seasoned solo traveler or embarking on your first solo adventure, dining solo offers a chance to connect with the flavors of a destination and create memorable culinary experiences that will last a lifetime.</p><p><br></p><p>For solo travelers with a love for food and adventure, these 5 culinary experiences offer a tantalizing glimpse into the diverse flavors and cuisines of the world. From street food safaris to cooking class adventures, market explorations, food tour feasts, and dining solo, each experience promises unforgettable tastes and discoveries that will delight the senses and nourish the soul. Embark on a solo culinary journey and taste your way through the rich tapestry of global gastronomy, one delicious bite at a time.</p>', 17, '2024-04-03 22:45:26', '2024-05-05 04:42:43');
+(1, '1712208486.jpg', 'Essential Travel Packing Tips: Pack Smarter, Travel Lighter: Your Guide to Stress-Free Packing', 'Discover top tips and tricks to pack efficiently for your next adventure and travel stress-free.', '<p>Packing efficiently for a trip can be a daunting task, but with the right strategies, you can streamline the process and ensure you have everything you need while traveling light. In this article, we\'ll explore essential travel packing tips to help you pack smarter and travel lighter on your next adventure.</p><p><b>1. Make a Packing List:</b>\r\n<br class=\"Apple-interchange-newline\"></p><p>Before you start packing, make a list of essential items you\'ll need for your trip. This will help you stay organized and avoid forgetting important items. Divide your list into categories such as clothing, toiletries, electronics, and documents to ensure you don\'t overlook anything.</p><p><b>2. Choose Versatile Clothing:</b></p><p>When selecting clothing for your trip, opt for versatile pieces that can be mixed and matched to create multiple outfits. Choose neutral colors and fabrics that are lightweight, breathable, and wrinkle-resistant. Consider the climate and activities you\'ll be participating in to determine the appropriate clothing items to pack.</p><p><b>3. Roll Your Clothes:</b></p><p>Maximize space in your suitcase by rolling your clothes instead of folding them. Rolling your clothes not only saves space but also helps prevent wrinkles and creases. Start with heavier items like jeans and sweaters at the bottom of your suitcase and roll lighter items like t-shirts and underwear on top.</p><p><b>4. Use Packing Cubes:</b></p><p>Invest in packing cubes to keep your clothing and accessories organized and easy to find. Packing cubes come in various sizes and colors and are designed to fit neatly inside your suitcase. Use different cubes for different types of clothing or organize them by outfit to make unpacking a breeze.</p><p><b>5. Pack Light:</b></p><p>When it comes to packing, less is more. Try to pack only the essentials and leave behind items you can live without. Consider your destination and the amenities available, such as laundry facilities, to determine how many clothing items you\'ll need. Remember, you can always buy things you need while traveling.</p><p><b>6. Layer Your Clothing:</b></p><p>Layering is key to staying comfortable and adapting to changing weather conditions while traveling. Pack lightweight layers that can be easily added or removed as needed, such as t-shirts, sweaters, and jackets. Choose fabrics that are moisture-wicking and quick-drying for maximum versatility.</p><p><b>7. Pack Multi-Purpose Items:</b></p><p>Save space in your suitcase by packing multi-purpose items that serve multiple functions. For example, a sarong can double as a beach towel, a picnic blanket, or a scarf, while a lightweight scarf can be used as a wrap, a headscarf, or a makeshift bag.</p><p><b>8. Minimize Toiletries:</b></p><p>Pack travel-sized toiletries to save space in your luggage and comply with TSA regulations. Look for mini versions of your favorite products or invest in reusable travel containers to transfer your toiletries into. Consider purchasing toiletries like shampoo, conditioner, and sunscreen at your destination to save space and weight in your luggage.</p><p><b>9. Leave Room for Souvenirs:</b></p><p>Leave some empty space in your suitcase for souvenirs and gifts you may acquire during your trip. Consider packing a collapsible bag or duffel for extra storage or purchasing a lightweight suitcase with expandable compartments. Remember to check baggage allowances and weight restrictions for both outbound and return flights to avoid excess baggage fees.</p><p><b>10. Pack Essential Documents:</b></p><p>Finally, don\'t forget to pack essential documents such as your passport, visa, travel insurance, and itinerary. Keep these documents organized and easily accessible in a waterproof travel wallet or pouch. Consider making photocopies or digital scans of important documents and storing them securely online or in a separate location in case of loss or theft.</p><p>By following these packing tips, you can pack smarter, travel lighter, and enjoy a stress-free journey to your destination. Bon voyage!</p>', 15, '2024-04-03 21:28:06', '2024-05-12 19:16:06'),
+(2, '1712215345.jpg', 'Top 10 Must-Have Travel Accessories: Essential Gear for Your Journey', 'Explore essential travel accessories that can make your journey more comfortable and enjoyable.', '<p>When preparing for a trip, having the right travel accessories can make all the difference in enhancing your travel experience. In this article, we\'ll explore the top 10 must-have travel accessories that you should consider packing for your next adventure.</p><p><b>1. Travel Pillow:</b></p><p>A comfortable travel pillow can provide much-needed support and help you get some rest during long flights or bus rides.</p><p><b>2. Portable Charger:</b></p><p>Keep your devices powered up on the go with a portable charger. This handy accessory ensures you never run out of battery while traveling.</p><p><b>3. Travel Adapter:</b></p><p>A universal travel adapter allows you to charge your devices in any country, making it essential for international travel.</p><p><b>4. Noise-Canceling Headphones:</b></p><p>Block out unwanted noise and enjoy your favorite music or podcasts with noise-canceling headphones. Perfect for long flights or noisy environments.</p><p><b>5. Travel Wallet:</b></p><p>Keep your passport, boarding passes, and important documents organized and secure with a dedicated travel wallet.</p><p><b>6. Reusable Water Bottle:</b></p><p>Stay hydrated while traveling with a reusable water bottle. Many airports and tourist attractions have water refill stations, allowing you to avoid single-use plastic bottles.</p><p><b>7. Packing Cubes:</b></p><p>Keep your clothing and accessories organized and easy to find with packing cubes. These handy organizers make packing and unpacking a breeze.</p><p><b>8. Lightweight Backpack:</b></p><p>A lightweight backpack is perfect for day trips and excursions, allowing you to carry your essentials comfortably while exploring.</p><p><b>9. Travel-Sized Toiletries:</b></p><p>Pack travel-sized toiletries to save space in your luggage and comply with TSA regulations. Look for mini versions of your favorite products or invest in reusable travel containers.</p><p><b>10. Luggage Locks:</b></p><p>Keep your belongings safe and secure with luggage locks. Choose TSA-approved locks for hassle-free security checks at airports.</p><p>By packing these essential travel accessories, you can ensure you\'re prepared for any adventure and make the most of your travel experience.</p>', 26, '2024-04-03 22:37:04', '2024-05-10 14:06:10'),
+(3, '1712213126.jpg', 'Global Gastronomy: 5 Culinary Adventures for Solo Foodies: Savor the World\'s Flavors', 'Dive into a world of flavors with these 5 culinary adventures, perfect for solo travelers passionate about food.', '<p>For solo travelers who are passionate about exploring different cuisines and culinary traditions, the world is a treasure trove of gastronomic delights waiting to be discovered. In this article, we\'ll explore 5 culinary experiences that promise solo foodies unforgettable tastes and flavors from around the globe.</p><p><br></p><p><b>1. Street Food Safari:</b></p><p>Embarking on a street food safari is like diving headfirst into the heart of a destination\'s culinary culture. Wander through bustling street markets, where the air is thick with the aromas of sizzling meats, aromatic spices, and freshly baked goods. Sample a variety of dishes from local vendors and food stalls, from piping hot dumplings and crispy spring rolls to sweet treats like freshly made crepes and exotic fruit skewers. Street food markets are not only a feast for the senses but also a window into the daily lives of locals, where you can mingle with street vendors and fellow food enthusiasts alike.</p><p><br></p><p><b>2. Cooking Class Adventure:</b></p><p>A cooking class adventure offers solo travelers the opportunity to roll up their sleeves and get hands-on in the kitchen. Whether it\'s mastering the art of making handmade pasta in Italy, whipping up spicy curries in Thailand, or learning the secrets of sushi-making in Japan, cooking classes provide an immersive culinary experience like no other. Led by expert chefs and local cooks, these classes delve deep into the traditional techniques, ingredients, and flavors of a destination\'s cuisine. Not only do cooking classes offer solo travelers the chance to learn new skills and recipes, but they also provide a unique insight into the cultural heritage and culinary traditions of a region.</p><p><br></p><p><b>3. Market Exploration:</b></p><p>Exploring bustling markets is a sensory adventure that solo travelers won\'t want to miss. From sprawling outdoor bazaars to historic indoor markets, these vibrant hubs of activity are a treasure trove of fresh produce, spices, and artisanal products unique to each destination. Wander through stalls piled high with colorful fruits and vegetables, inhale the intoxicating scents of exotic spices and herbs, and browse handcrafted goods and souvenirs made by local artisans. Whether you\'re bargaining for the freshest seafood, sampling street snacks, or simply soaking up the bustling atmosphere, market exploration offers solo travelers an authentic taste of local life and culture.</p><p><br></p><p><b>4. Food Tour Feast:</b></p><p>Joining a food tour is the perfect way for solo travelers to discover the culinary secrets of a destination with the guidance of local experts. Led by knowledgeable guides, food tours take you on a gastronomic journey through the streets and neighborhoods of a city, where you\'ll sample an array of dishes from hidden gems and local eateries. From savory street food to sweet treats, each stop offers a tantalizing taste of the region\'s culinary scene, accompanied by fascinating stories and insights into the history and culture behind the food. Whether you\'re exploring bustling night markets, historic food districts, or off-the-beaten-path neighborhoods, a food tour feast promises solo travelers an unforgettable culinary adventure filled with flavors, aromas, and discoveries.</p><p><br></p><p><b>5. Dining Solo:</b></p><p>Dining solo is a liberating experience that allows solo travelers to indulge their culinary cravings on their own terms. Whether you\'re sampling street food from a bustling market stall, enjoying a leisurely meal at a cozy cafe, or dining at a fine-dining restaurant, solo dining offers the freedom to explore a destination\'s culinary scene at your own pace. Solo travelers can savor each bite, engage with locals and fellow diners, and soak up the ambiance of their surroundings without the pressure of keeping up with group dynamics. Whether you\'re a seasoned solo traveler or embarking on your first solo adventure, dining solo offers a chance to connect with the flavors of a destination and create memorable culinary experiences that will last a lifetime.</p><p><br></p><p>For solo travelers with a love for food and adventure, these 5 culinary experiences offer a tantalizing glimpse into the diverse flavors and cuisines of the world. From street food safaris to cooking class adventures, market explorations, food tour feasts, and dining solo, each experience promises unforgettable tastes and discoveries that will delight the senses and nourish the soul. Embark on a solo culinary journey and taste your way through the rich tapestry of global gastronomy, one delicious bite at a time.</p>', 18, '2024-04-03 22:45:26', '2024-05-10 16:06:48');
 
 -- --------------------------------------------------------
 
@@ -874,6 +940,12 @@ ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
+-- Indexes for table `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
@@ -981,7 +1053,7 @@ ALTER TABLE `amenities`
 -- AUTO_INCREMENT for table `booked_rooms`
 --
 ALTER TABLE `booked_rooms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `customers`
@@ -1011,24 +1083,30 @@ ALTER TABLE `features`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `payments`
+--
+ALTER TABLE `payments`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
