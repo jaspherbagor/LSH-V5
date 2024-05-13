@@ -34,6 +34,15 @@ class CustomerOrderController extends Controller
         return view('customer.pending_orders', compact('pending_orders'));
     }
 
+    public function declined_order()
+    {
+        $declined_orders = Order::where('customer_id', Auth::guard('customer')->user()->id)
+                    ->where('status', 'Declined')
+                    ->get();
+
+        return view('customer.declined_orders', compact('declined_orders'));
+    }
+
     // Method to display the invoice for a specific order based on the given order ID
     public function invoice($id)
     {

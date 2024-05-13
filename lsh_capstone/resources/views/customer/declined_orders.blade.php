@@ -13,7 +13,7 @@
                                 <thead>
                                     <tr>
                                         <th>SL</th>
-                                        <th>Booking No</th>
+                                        <th>Reference No.</th>
                                         <th>Payment Method</th>
                                         <th>Booking Date</th>
                                         <th>Paid Amount</th>
@@ -22,25 +22,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($pending_orders as $row)
-
-                                    {{-- @php
-                                    $order_detail = \App\Models\OrderDetail::where('order_no', $row->order_no)->first();
-                                    $room = \App\Models\Room::where('id', $order_detail->room_id)->first();
-                                    $accommodation = \App\Models\Accommodation::where('id', $room->accommodation_id)->first(); 
-                                    @endphp --}}
+                                    @foreach($declined_orders as $row)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $row->order_no }}</td>
+                                        <td>{{ $row->transaction_id }}</td>
                                         <td>{{ $row->payment_method }}</td>
                                         <td>{{ $row->booking_date }}</td>
                                         <td>₱{{ number_format($row->paid_amount, 2) }}</td>
                                         <td class="pt_10 pb_10">
-                                            <button type="button" class="btn btn-danger">{{ $row->status }}</button>
+                                            <button type="button" class="btn btn-dark">{{ $row->status }}</button>
                                         </td>
                                         <td class="pt_10 pb_10">
                                             <a href="{{ route('customer_invoice',$row->id) }}" class="btn btn-info mb-md-0 mb-1" data-toggle="tooltip" data-placement="top" title="Detail"><i class="fa fa-sticky-note-o" aria-hidden="true"></i></a>
-                                            {{-- <a href="{{ route('customer_review_add', $accommodation->id) }}" class="btn btn-success mb-md-0 mb-1" data-toggle="tooltip" data-placement="top" title="Rate Now"><i class="fa fa-star" aria-hidden="true"></i></a> --}}
                                         </td>
                                         
                                     </tr>

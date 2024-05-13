@@ -147,6 +147,8 @@ Route::group(['middleware' => ['customer:customer']], function() {
 
     Route::get('/customer/pending-order/view', [CustomerOrderController::class, 'pending_order'])->name('customer_pending_order_view');
 
+    Route::get('/customer/declined-order/view', [CustomerOrderController::class, 'declined_order'])->name('customer_declined_order_view');
+
     Route::get('/customer/invoice/{id}', [CustomerOrderController::class, 'invoice'])->name('customer_invoice');
 
     Route::get('/customer/review/view', [CustomerReviewController::class, 'index'])->name('customer_review_view');

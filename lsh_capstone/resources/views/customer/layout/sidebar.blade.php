@@ -19,6 +19,8 @@
 
             <li class="{{ Request::is('customer/pending-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customer_pending_order_view') }}"><i class="fa fa-clock-o"></i> <span>Pending Bookings</span></a></li>
 
+            <li class="{{ Request::is('customer/declined-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customer_declined_order_view') }}"><i class="fa fa-times"></i> <span>Declined Bookings</span></a></li>
+
             <li class="{{ Request::is('customer/review/view') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('customer_review_view') }}"><i class="fa fa-star"></i> <span>Reviews</span></a>
             </li>
