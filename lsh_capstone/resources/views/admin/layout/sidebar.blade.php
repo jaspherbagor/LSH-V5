@@ -52,11 +52,17 @@
 
             <li class="{{ Request::is('admin/customer') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_customer') }}"><i class="fa fa-users"></i> <span>Customers</span></a></li>
 
-            <li class="{{ Request::is('admin/order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_order_view') }}"><i class="fa fa-list-alt"></i> <span>Bookings</span></a></li>
+            <li class="nav-item dropdown {{ Request::is('admin/order/view') || Request::is('admin/pending-order/view') || Request::is('admin/declined-order/view')  ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown"><i class="fa fa-list-alt"></i><span>Bookings</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ Request::is('admin/order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_order_view') }}"><i class="fa fa-angle-right"></i> <span>All Bookings</span></a></li>
 
-            <li class="{{ Request::is('admin/pending-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_pending_order_view') }}"><i class="fa fa-clock-o"></i> <span>Pending Bookings</span></a></li>
+                    <li class="{{ Request::is('admin/pending-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_pending_order_view') }}"><i class="fa fa-angle-right"></i> <span>Pending Bookings</span></a></li>
 
-            <li class="{{ Request::is('admin/declined-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_declined_order_view') }}"><i class="fa fa-times"></i> <span>Declined Bookings</span></a></li>
+                    <li class="{{ Request::is('admin/declined-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_declined_order_view') }}"><i class="fa fa-angle-right"></i> <span>Declined Bookings</span></a></li>
+
+                </ul>
+            </li>
 
             <li class="{{ Request::is('admin/review/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_review_view') }}"><i class="fa fa-star"></i> <span>Accommodation Reviews</span></a></li>
 
