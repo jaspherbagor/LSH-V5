@@ -116,15 +116,15 @@
                             <input type="hidden" name="room_id" value="{{ $single_room_data->id }}">
                             <div class="form-group mb_20">
                                 <label for="">Check in & Check out</label>
-                                <input type="text" name="checkin_checkout" class="form-control daterange1" placeholder="Checkin & Checkout">
+                                <input type="text" name="checkin_checkout" class="form-control daterange1" placeholder="Checkin & Checkout" value="{{ old('checkin_checkout') }}">
                             </div>
                             <div class="form-group mb_20">
                                 <label for="">Adult</label>
-                                <input type="number" name="adult" class="form-control" min="1" max="30" placeholder="Adults">
+                                <input type="number" name="adult" class="form-control" min="1" max="30" placeholder="Adults" value="{{ old('adult') }}">
                             </div>
                             <div class="form-group mb_20">
                                 <label for="">Children</label>
-                                <input type="number" name="children" class="form-control" min="0" max="30" placeholder="Children">
+                                <input type="number" name="children" class="form-control" min="0" max="30" placeholder="Children" value="{{ old('children') }}">
                             </div>
                             <button type="submit" class="book-now">Add to Cart</button>
                         </form>

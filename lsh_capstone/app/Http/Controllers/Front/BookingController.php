@@ -475,8 +475,8 @@ class BookingController extends Controller
     public function gcash(Request $request, $price)
     {
         // dd($request->reference_id);
-        if(!$request->reference_id) {
-            return redirect()->route('payment')->with('error', 'Please input your reference number to complete the booking process!');
+        if($request->reference_id === '') {
+            return redirect()->route('home')->with('error', 'Please input your reference number to complete the booking process!');
         } else {
 
         // Generate an order number based on the current time
@@ -666,7 +666,7 @@ class BookingController extends Controller
         session()->forget('billing_zip');
 
         // Redirect the customer to the home page with a success message
-        return redirect()->route('home')->with('success', 'Payment is waiting for approval!');
+        return redirect()->route('home')->with('success', 'Your booking is waiting for approval!');
 
         }
     }
@@ -861,7 +861,7 @@ class BookingController extends Controller
         session()->forget('billing_zip');
 
         // Redirect the customer to the home page with a success message
-        return redirect()->route('home')->with('success', 'Payment is waiting for approval!');dd($price);
+        return redirect()->route('home')->with('success', 'Your booking is waiting for approval!');dd($price);
     }
 
 
