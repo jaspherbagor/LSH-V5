@@ -475,9 +475,9 @@ class BookingController extends Controller
     public function gcash(Request $request, $price)
     {
         // dd($request->reference_id);
-        // if(!$request->reference_id) {
-        //     return redirect()->route('payment')->with('error', 'Please input your reference number to complete the booking process!');
-        // }
+        if(!$request->reference_id) {
+            return redirect()->route('payment')->with('error', 'Please input your reference number to complete the booking process!');
+        } else {
 
         // Generate an order number based on the current time
         $order_no = time();
@@ -667,6 +667,8 @@ class BookingController extends Controller
 
         // Redirect the customer to the home page with a success message
         return redirect()->route('home')->with('success', 'Payment is waiting for approval!');
+
+        }
     }
 
     public function maya(Request $request, $price)
