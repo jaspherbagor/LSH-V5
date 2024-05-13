@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\AdminFeatureController;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminOrderController;
+use App\Http\Controllers\Admin\AdminPaymentController;
 use App\Http\Controllers\Admin\AdminPhotoController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminProfileController;
@@ -176,6 +177,8 @@ Route::group(['middleware' => ['admin:admin']], function() {
     Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home');
 
     Route::get('/admin/setting', [AdminSettingController::class, 'index'])->name('admin_setting');
+
+    Route::get('/admin/payment', [AdminPaymentController::class, 'index'])->name('admin_payment');
 
     Route::get('/admin/datewise-rooms', [AdminDatewiseRoomController::class, 'index'])->name('admin_datewise_rooms');
 

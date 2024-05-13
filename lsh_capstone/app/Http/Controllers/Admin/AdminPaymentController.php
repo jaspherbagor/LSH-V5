@@ -12,8 +12,8 @@ class AdminPaymentController extends Controller
     {
         $payment_info = Payment::where('id', 1)->first();
 
-        return view('admin.payment', compact('payment_info'));
+        return view('admin.payment_info', compact('payment_info'));
     }
 
-    
+
 }

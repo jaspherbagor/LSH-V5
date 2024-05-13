@@ -16,6 +16,8 @@
             <li class="{{ Request::is('admin/edit-profile') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_profile') }}"><i class="fa fa-user-plus"></i> <span>Edit Profile</span></a></li>
             <li class="{{ Request::is('admin/setting') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_setting') }}"><i class="fa  fa-cogs"></i> <span>Setting</span></a></li>
 
+            <li class="{{ Request::is('admin/payment') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_payment') }}"><i class="fa  fa-cogs"></i> <span>Payment Information</span></a></li>
+
             <li class="{{ Request::is('admin/datewise-rooms') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_datewise_rooms') }}"><i class="fa fa-calendar"></i> <span>Datewise Rooms</span></a></li>
 
 
@@ -49,6 +51,7 @@
             </li>
 
             <li class="{{ Request::is('admin/customer') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_customer') }}"><i class="fa fa-users"></i> <span>Customers</span></a></li>
+
             <li class="{{ Request::is('admin/order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_order_view') }}"><i class="fa fa-list-alt"></i> <span>Bookings</span></a></li>
 
             <li class="{{ Request::is('admin/pending-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_pending_order_view') }}"><i class="fa fa-clock-o"></i> <span>Pending Bookings</span></a></li>
