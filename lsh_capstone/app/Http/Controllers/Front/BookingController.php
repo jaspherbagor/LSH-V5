@@ -9,6 +9,7 @@ use App\Models\AccommodationType;
 use App\Models\BookedRoom;
 use App\Models\Order;
 use App\Models\OrderDetail;
+use App\Models\Payment;
 use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -218,10 +219,13 @@ class BookingController extends Controller
 
     public function payment(Request $request)
     {
+
         // Check if the customer is logged in; if not, redirect back with an error message
         if (!Auth::guard('customer')->check()) {
             return redirect()->back()->with('error', 'You must have to login in order to checkout');
         }
+
+        $payment_info = Payment::where('id', 1)->first();
 
         // Check if the cart contains any items; if not, redirect back with an error message
         if (!session()->has('cart_room_id')) {
@@ -251,7 +255,7 @@ class BookingController extends Controller
         session()->put('billing_zip', $request->billing_zip);
 
         // Render the payment view
-        return view('front.payment');
+        return view('front.payment', compact('payment_info'));
     }
 
     public function stripe(Request $request, $final_price)
