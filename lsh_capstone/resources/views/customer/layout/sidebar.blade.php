@@ -21,12 +21,12 @@
 
             <li class="{{ Request::is('customer/declined-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('customer_declined_order_view') }}"><i class="fa fa-times"></i> <span>Declined Bookings</span></a></li>
 
-            <li class="{{ Request::is('customer/accommodation/view') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('customer_accommodation_view') }}"><i class="fa fa-star"></i> <span>Add Accommodation Review</span></a>
+            <li class="{{ Request::is('customer/accommodations/view') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('customer_accommodation_view') }}"><i class="fa fa-building"></i> <span>Add Accommodation Review</span></a>
             </li>
 
             <li class="{{ Request::is('customer/review/view') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('customer_review_view') }}"><i class="fa fa-star"></i> <span>Reviews</span></a>
+                <a class="nav-link" href="{{ route('customer_review_view') }}"><i class="fa fa-star"></i> <span>My Reviews</span></a>
             </li>
 
             <li class="{{ Request::is('customer/edit-profile') ? 'active' : '' }}">
