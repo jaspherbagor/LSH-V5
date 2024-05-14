@@ -152,6 +152,9 @@ Route::group(['middleware' => ['customer:customer']], function() {
 
     Route::get('/customer/invoice/{id}', [CustomerOrderController::class, 'invoice'])->name('customer_invoice');
 
+    Route::get('/customer/accommodations/view', [CustomerReviewController::class, 'accommodation_view'])->name('customer_accommodation_view');
+
+
     Route::get('/customer/review/view', [CustomerReviewController::class, 'index'])->name('customer_review_view');
 
     Route::get('/customer/review/add/{id}', [CustomerReviewController::class, 'add_review'])->name('customer_review_add');
