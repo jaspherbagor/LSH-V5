@@ -22,6 +22,13 @@ class CustomerReviewController extends Controller
         return view('customer.review_view', compact('rates'));
     }
 
+    public function accommodation_review()
+    {
+        $accommodations = Accommodation::get();
+
+        return view('customer.accommodations', compact('accommodations'));
+    }
+
     // Method to display the form for adding a review to a specific accommodation
     public function add_review($id)
     {
