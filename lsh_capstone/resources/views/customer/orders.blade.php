@@ -30,7 +30,7 @@
                                         <td>{{ $row->order_no }}</td>
                                         <td>{{ $row->payment_method }}</td>
                                         <td>{{ $row->booking_date }}</td>
-                                        <td>{{ $row->paid_amount }}</td>
+                                        <td>₱{{ number_format($row->paid_amount, 2) }}</td>
                                         <td class="pt_10 pb_10">
                                             <button type="button" class="btn btn-success">{{ $row->status }}</button>
                                         </td>
