@@ -64,7 +64,7 @@
     
                             </div>
                             <div class="button">
-                                <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary">See Detail</a>
+                                <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i> See Detail</a>
                             </div>
                         </div>
                     </div>
