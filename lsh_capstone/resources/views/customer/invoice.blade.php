@@ -77,7 +77,7 @@
                                 <th>Accommodation Name</th>
                                 <th>Room Name</th>
                                 <th class="text-center">Checkin Date</th>
-                                <th class="text-center">Checkout date</th>
+                                <th class="text-center">Checkout Date</th>
                                 <th class="text-center">Number of Adult</th>
                                 <th class="text-center">Number of Children</th>
                                 <th class="text-right">Subtotal</th>
