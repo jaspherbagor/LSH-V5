@@ -57,6 +57,8 @@
                 <ul class="dropdown-menu">
                     <li class="{{ Request::is('admin/order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_order_view') }}"><i class="fa fa-angle-right"></i> <span>All Bookings</span></a></li>
 
+                    <li class="{{ Request::is('admin/completed-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_completed_order_view') }}"><i class="fa fa-angle-right"></i> <span>Completed Bookings</span></a></li>
+
                     <li class="{{ Request::is('admin/pending-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_pending_order_view') }}"><i class="fa fa-angle-right"></i> <span>Pending Bookings</span></a></li>
 
                     <li class="{{ Request::is('admin/declined-order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_declined_order_view') }}"><i class="fa fa-angle-right"></i> <span>Declined Bookings</span></a></li>

@@ -40,6 +40,13 @@ class AdminOrderController extends Controller
         return view('admin.declined_orders', compact('declined_orders'));
     }
 
+    public function completed_order()
+    {
+        $completed_orders = Order::where('status', 'Completed')->get();
+
+        return view('admin.completed_orders', compact('completed_orders'));
+    }
+
     public function confirm($id)
     {
         $order_data = Order::where('id', $id)->first();

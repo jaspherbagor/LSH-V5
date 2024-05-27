@@ -199,6 +199,8 @@ Route::group(['middleware' => ['admin:admin']], function() {
 
     Route::get('/admin/pending-order/view', [AdminOrderController::class, 'pending_order'])->name('admin_pending_order_view');
 
+    Route::get('/admin/completed-order/view', [AdminOrderController::class, 'completed_order'])->name('admin_completed_order_view');
+
     Route::get('/admin/declined-order/view', [AdminOrderController::class, 'declined_order'])->name('admin_declined_order_view');
 
     Route::get('/admin/order/confirm/{id}', [AdminOrderController::class, 'confirm'])->name('admin_order_confirm');
