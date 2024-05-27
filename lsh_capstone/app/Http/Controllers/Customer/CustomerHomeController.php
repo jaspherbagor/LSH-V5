@@ -27,10 +27,11 @@ class CustomerHomeController extends Controller
 
         // Retrieve the 5 most recent orders for the authenticated customer, ordered by ID in descending order
         $recent_orders = Order::where('customer_id', Auth::guard('customer')->user()->id)
-                              ->orderBy('id', 'desc')
-                              ->skip(0)
-                              ->take(5)
-                              ->get();
+                            ->where('status', 'Completed')
+                            ->orderBy('id', 'desc')
+                            ->skip(0)
+                            ->take(5)
+                            ->get();
 
         // Retrieve the total count of reviews (accommodation rates) submitted by the authenticated customer
         $total_reviews = AccommodationRate::where('customer_id', Auth::guard('customer')->user()->id)
