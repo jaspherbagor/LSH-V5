@@ -77,7 +77,7 @@
                                             <th>SL</th>
                                             <th>Booking No</th>
                                             <th>Payment Method</th>
-                                            <th>Booking Date</th>
+                                            <th>Checkin & Checkout Date</th>
                                             <th>Paid Amount</th>
                                             <th>Status</th>
                                             <th>Action</th>
@@ -85,11 +85,15 @@
                                     </thead>
                                     <tbody>
                                         @foreach($recent_orders as $row)
+                                        @php
+                                        $check_date = \App\Models\OrderDetail::where('order_no', $row->order_no)->first();
+                                        @endphp
+
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $row->order_no }}</td>
                                             <td>{{ $row->payment_method }}</td>
-                                            <td>{{ \Carbon\Carbon::createFromFormat('d/m/Y', $row->booking_date)->format('F d, Y') }}</td>
+                                            <td>{{ \Carbon\Carbon::createFromFormat('d/m/Y', $check_date->checkin_date)->format('F d, Y') }} - {{ \Carbon\Carbon::createFromFormat('d/m/Y', $check_date->checkout_date)->format('F d, Y') }}</td>
                                             <td>₱{{ number_format($row->paid_amount, 2) }}</td>
                                             <td class="pt_10 pb_10">
                                                 @if($row->status === 'Completed')
