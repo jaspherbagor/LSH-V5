@@ -36,7 +36,7 @@ class AdminHomeController extends Controller
         $total_subscribers = Subscriber::where('status', 1)->count();
 
         // Retrieve the 5 most recent orders in descending order of their IDs
-        $recent_orders = Order::orderBy('id', 'desc')->skip(0)->take(5)->get();
+        $recent_orders = Order::orderBy('id', 'desc')->where('status', 'Completed')->skip(0)->take(5)->get();
 
         // Return the 'admin.home' view with all the calculated data
         return view('admin.home', compact('total_completed_orders', 'total_pending_orders', 'total_active_customers', 'total_pending_customers', 'total_accommodations', 'total_subscribers', 'recent_orders'));
