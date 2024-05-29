@@ -52,7 +52,7 @@
 
             <li class="{{ Request::is('admin/customer') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_customer') }}"><i class="fa fa-users"></i> <span>Customers</span></a></li>
 
-            <li class="nav-item dropdown {{ Request::is('admin/order/view') || Request::is('admin/pending-order/view') || Request::is('admin/declined-order/view')  ? 'active' : '' }}">
+            <li class="nav-item dropdown {{ Request::is('admin/order/view') || Request::is('admin/pending-order/view') || Request::is('admin/declined-order/view') || Request::is('admin/completed-order/view')  ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fa fa-list-alt"></i><span>Bookings</span></a>
                 <ul class="dropdown-menu">
                     <li class="{{ Request::is('admin/order/view') ? 'active' : '' }}"><a class="nav-link" href="{{ route('admin_order_view') }}"><i class="fa fa-angle-right"></i> <span>All Bookings</span></a></li>
