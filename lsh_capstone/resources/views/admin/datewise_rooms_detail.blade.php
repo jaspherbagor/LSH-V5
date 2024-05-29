@@ -17,6 +17,7 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
+                                    {{-- <th>Accommodation Name</th> --}}
                                     <th>Room Name</th>
                                     <th>Total Rooms</th>
                                     <th>Booked Rooms</th>
@@ -28,9 +29,17 @@
                                 $rooms = \App\Models\Room::get();
                                 @endphp 
                                 @foreach($rooms as $row)
+
+                                {{-- @php
+                                // dd($row->id);
+                                $accommodation = \App\Models\Accommodation::where('id', $row->id)->first();
+                                // dd($accommodation) 
+                                // \App\Models\Room::where('id',$item->room_id)->first();
+                                @endphp --}}
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $row->name }}</td>
+                                    {{-- <td>{{ $accommodation->name }}</td> --}}
+                                    <td>{{ $row->room_name }}</td>
                                     <td>{{ $row->total_rooms }}</td>
                                     <td>
                                         @php
