@@ -26,13 +26,16 @@
                                 <tbody>
                                     @php $i=0; @endphp
                                     @foreach($rooms as $row)
-                                    @php $i++; @endphp
+                                    @php $i++;
+                                    $accommodation_info = \App\Models\Accommodation::where('id', $row->accommodation_id)->first();
+                                    $accommodation_type_info = \App\Models\AccommodationType::where('id', $accommodation_info->accommodation_type_id)->first();
+                                    @endphp
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td><img src="{{ asset('uploads/'.$row->featured_photo) }}" alt="slide_image" class="w_200"></td>
                                         <td>{{ $accommodation->name }}</td>
                                         <td>{{ $row->room_name }}</td>
-                                        @if($accommodation_type->name != 'Hotel')
+                                        @if($accommodation_type_info->name != 'Hotel')
                                         <td>₱{{ $row->price }}/month</td>
                                         @else
                                         <td>₱{{ $row->price }}/night</td>
@@ -81,7 +84,7 @@
                                                         </div>
                                                         <div class="form-group row bdb1 pt_10 mb_0">
                                                             <div class="col-md-4">
-                                                                @if($accommodation_type->name != 'Hotel')
+                                                                @if($accommodation_type_info->name != 'Hotel')
                                                                 <label class="form-label">Price (per month)</label>
                                                                 @else
                                                                 <label class="form-label">Price (per night)</label>
