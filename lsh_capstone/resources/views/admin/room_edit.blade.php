@@ -3,7 +3,7 @@
 @section('heading', 'Edit Accommodation')
 
 @section('right_top_button')
-<a href="{{ route('admin_room_view', $room_data->id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_room_view', $room_data->accommodation_id) }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
 @endsection
 
 @section('main_content')
