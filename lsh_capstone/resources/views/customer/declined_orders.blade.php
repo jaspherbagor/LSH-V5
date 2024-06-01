@@ -27,7 +27,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $row->transaction_id }}</td>
                                         <td>{{ $row->payment_method }}</td>
-                                        <td>{{ $row->booking_date }}</td>
+                                        <td>{{ \Carbon\Carbon::createFromFormat('d/m/Y', $row->booking_date)->format('F d, Y') }}</td>
                                         <td>₱{{ number_format($row->paid_amount, 2) }}</td>
                                         <td class="pt_10 pb_10">
                                             <button type="button" class="btn btn-dark">{{ $row->status }}</button>
