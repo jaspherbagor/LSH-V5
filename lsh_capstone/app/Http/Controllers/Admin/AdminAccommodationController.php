@@ -68,8 +68,9 @@ class AdminAccommodationController extends Controller
     {
         // Retrieve the accommodation data based on the provided ID
         $accommodation_data = Accommodation::where('id', $id)->first();
+        $accommodation_type_data = AccommodationType::where('id', $accommodation_data->accommodation_type_id)->first();
         // Return a view with the accommodation data for the edit form
-        return view('admin.accommodation_edit', compact('accommodation_data'));
+        return view('admin.accommodation_edit', compact('accommodation_data', 'accommodation_type_data'));
     }
 
     // Method to handle the form submission and updating an existing accommodation
