@@ -1390,11 +1390,11 @@ select {
 	height: 60px
 }
 
-.login-btn {
+.login-btn, .register-btn {
 	border-radius: 10px
 }
 
-.login-btn:hover {
+.login-btn:hover, .register-btn:hover {
 	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 	background: #e1ab65 !important
 }
