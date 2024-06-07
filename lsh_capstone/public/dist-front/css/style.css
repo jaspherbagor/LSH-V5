@@ -1389,3 +1389,12 @@ select {
 .payment-logo {
 	height: 60px
 }
+
+.login-btn {
+	border-radius: 10px
+}
+
+.login-btn:hover {
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	background: #f4b35f !important
+}

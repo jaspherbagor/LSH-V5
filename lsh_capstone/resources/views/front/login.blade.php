@@ -53,7 +53,7 @@
                                     @endif
                                 </div>
                                 <div class="mb-4 text-center">
-                                    <button type="submit" class="btn btn-primary bg-website w-100">Login</button>
+                                    <button type="submit" class="btn btn-primary bg-website w-100 login-btn">Login</button>
                                     
                                 </div>
                                 <div class="mt-2">
