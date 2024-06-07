@@ -65,7 +65,7 @@
                                     @endif
                                 </div>
                                 <div class="mb-3 text-center">
-                                    <button type="submit" class="btn btn-primary bg-website">Submit</button>
+                                    <button type="submit" class="btn btn-primary bg-website">Register</button>
                                 </div>
                                 <div class="mb-3">
                                     Already have an account?
