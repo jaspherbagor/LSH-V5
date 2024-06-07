@@ -23,8 +23,6 @@
                                 </thead>
                                 <tbody>
                                     @foreach($completed_orders as $row)
-
-                                    
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $row->order_no }}</td>
