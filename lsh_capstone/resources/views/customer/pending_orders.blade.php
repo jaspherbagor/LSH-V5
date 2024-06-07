@@ -23,12 +23,6 @@
                                 </thead>
                                 <tbody>
                                     @foreach($pending_orders as $row)
-
-                                    {{-- @php
-                                    $order_detail = \App\Models\OrderDetail::where('order_no', $row->order_no)->first();
-                                    $room = \App\Models\Room::where('id', $order_detail->room_id)->first();
-                                    $accommodation = \App\Models\Accommodation::where('id', $room->accommodation_id)->first(); 
-                                    @endphp --}}
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $row->order_no }}</td>
